@@ -52,8 +52,8 @@ export default function Home() {
         {/* HeroSection */}
         <section className="max-w-[1240px] my-20 mx-auto grid grid-cols-2  gap-2 font-body h-[540px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
           <div className="flex flex-col items-start justify-center h-full sm:items-center">
-            <h1 className="w-full text-4xl sm:text-center">
-              Discover New Era of <br /> Crypto Currencies
+            <h1 className="w-full text-6xl sm:text-center">
+              Artvisionary <br />
             </h1>
             <p className="text-[#ADB9C7] sm:text-center">
               Artvisionary is the primier marketplace for NFT, which are digital items
