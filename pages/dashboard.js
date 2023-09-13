@@ -13,6 +13,8 @@ const mainURL = `https://arweave.net/`;
 const Dashboard = () => {
   const [nfts, setNts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const router = useRouter();
 
@@ -64,6 +66,18 @@ const Dashboard = () => {
     getNfts();
   }, []);
 
+  useEffect(() => {
+    // 3秒ごとにnextSlide関数を実行するタイマーを設定
+    const timer = setInterval(() => {
+      if (isModalOpen) {
+        nextSlide();
+      }
+    }, 3000);
+
+    // クリーンアップ関数: タイマーを解除する
+    return () => clearInterval(timer);
+  }, [isModalOpen, currentSlideIndex]);
+
   if (!loading)
     return (
       <div className="w-full h-screen flex flex-col items-center justify-center font-body">
@@ -71,6 +85,20 @@ const Dashboard = () => {
         <h2 className="text-7xl font-semibold ">Loading...</h2>
       </div>
     );
+
+
+
+
+
+  const nextSlide = () => {
+    setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % nfts.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlideIndex((prevIndex) => (prevIndex - 1 + nfts.length) % nfts.length);
+  };
+
+
 
   return (
     <div className="relative ">
@@ -88,6 +116,20 @@ const Dashboard = () => {
       ) : (
         <div className="relative overflow-hidden">
           <h1 className="text-center">Hot NFTs</h1>
+          <button onClick={() => setIsModalOpen(true)}>Open Slideshow</button>
+          {isModalOpen && (
+            <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src={mainURL + nfts[currentSlideIndex]?.image} alt={nfts[currentSlideIndex]?.name} />
+                <div className="flex justify-between p-4">
+                  <button onClick={prevSlide}>Previous</button>
+                  <button onClick={() => setIsModalOpen(false)}>Close</button>
+                  <button onClick={nextSlide}>Next</button>
+                </div>
+              </div>
+            </div>
+          )}
+
           <section className="max-w-[1200px] my-20 mx-auto grid grid-cols-3 md:grid-cols-2 gap-4 font-body  overflow-hidden top-7 md:gap-5 medium md:px-5 sm:grid-cols-1 sm:h-full relative justify-center items-center ">
             {nfts?.map((nft, i) => (
               <div key={i} className="w-full h-[536px] sm:h-full ssm:h-max">
@@ -143,6 +185,8 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
+
+
             ))}
           </section>
           <Footer />
