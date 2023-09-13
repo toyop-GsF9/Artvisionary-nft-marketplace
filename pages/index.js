@@ -56,7 +56,7 @@ export default function Home() {
               Discover New Era of <br /> Crypto Currencies
             </h1>
             <p className="text-[#ADB9C7] sm:text-center">
-              Artvisionary_backend is the primier marketplace for NFT, which are digital items
+              Artvisionary is the primier marketplace for NFT, which are digital items
               you can truly own. Digital items have existed for a long time, but
               never like this.
             </p>
@@ -173,14 +173,12 @@ export default function Home() {
         <section className="max-w-[1240px] bg- my-20 mx-auto bg-[#272D37] gap-2 font-body top-7 text-center p-10 rounded-xl sm:mx-10 md:m-10 border border-solid border-sky-600">
           <div>
             <h1 className="text-4xl sm:text-2xl">Create Your Own NFT!</h1>
-            <p className="text-[#ADB9C7] px-[120px] sm:p-2 ms:p-1">
+            {/* <p className="text-[#ADB9C7] px-[120px] sm:p-2 ms:p-1">
               We have a large scale group to support each other in this game,
               Join us to get the news as soon as possible and follow our latest
               announcements!
-            </p>
-            <button className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer transition duration-250 ease-in-out hover:scale-125 hover:drop-shadow-xl hover:shadow-sky-600 w-auto  ">
-              Join Community Now
-            </button>
+            </p> */}
+
           </div>
         </section>
 
