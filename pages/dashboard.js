@@ -118,10 +118,10 @@ const Dashboard = () => {
           <h1 className="text-center">Hot NFTs</h1>
           <button onClick={() => setIsModalOpen(true)}>Open Slideshow</button>
           {isModalOpen && (
-            <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <img src={mainURL + nfts[currentSlideIndex]?.image} alt={nfts[currentSlideIndex]?.name} />
-                <div className="flex justify-between p-4">
+            <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-70">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden max-w-full max-h-full relative">
+                <img src={mainURL + nfts[currentSlideIndex]?.image} alt={nfts[currentSlideIndex]?.name} className="max-w-full max-h-[80vh] mx-auto" />
+                <div className="flex justify-between p-4 absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 text-white">
                   <button onClick={prevSlide}>Previous</button>
                   <button onClick={() => setIsModalOpen(false)}>Close</button>
                   <button onClick={nextSlide}>Next</button>
@@ -129,6 +129,7 @@ const Dashboard = () => {
               </div>
             </div>
           )}
+
 
           <section className="max-w-[1200px] my-20 mx-auto grid grid-cols-3 md:grid-cols-2 gap-4 font-body  overflow-hidden top-7 md:gap-5 medium md:px-5 sm:grid-cols-1 sm:h-full relative justify-center items-center ">
             {nfts?.map((nft, i) => (
