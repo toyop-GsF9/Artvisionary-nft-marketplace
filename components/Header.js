@@ -36,18 +36,18 @@ const Header = () => {
     <>
       <section
         className={` ${isOpen
-            ? `sticky top-0 z-[100] w-full px-2 py-2 sm:px-4 transition duration-250 ease-in-out left-[0] `
-            : `sticky top-0 z-[100] w-full px-2 py-2 sm:px-4 transition duration-250 ease-in-out left-[-100%]`
+          ? `sticky top-0 z-[100] w-full px-2 py-2 sm:px-4 transition duration-250 ease-in-out left-[0] `
+          : `sticky top-0 z-[100] w-full px-2 py-2 sm:px-4 transition duration-250 ease-in-out left-[-100%]`
           }`}
       >
         <nav
           className={
             hasScrolled
-              ? `rounded-lg px-6 font-body flex items-center justify-between max-w-[1240px] my-2 mx-auto h-16 md:px-4 md:mx-5 backdrop-blur-sm bg-[#000000]/40 sm:px-1 ssm:p-1 transition duration-250 ease-in-out border border-solid border-sky-600`
-              : `rounded-lg px-6 font-body flex items-center justify-between max-w-[1440px] my-2 mx-auto h-16 md:px-4 md:mx-5 sm:px-1 ssm:p-1 transition duration-250 ease-in-out`
+              ? `rounded-lg px-6 font-body flex items-center justify-between max-w-[1240px] my-2 mx-auto h-16 md:px-4 md:mx-5 backdrop-blur-sm bg-black sm:px-1 ssm:p-1 transition duration-250 ease-in-out border border-solid border-sky-600`
+              : `rounded-lg px-6 font-body flex items-center justify-between max-w-[1440px] my-2 mx-auto h-16 md:px-4 md:mx-5 bg-black sm:px-1 ssm:p-1 transition duration-250 ease-in-out`
           }
         >
-          <h2 className="text-2xl ssm:text-[10px]">
+          <h2 className="text-2xl ssm:text-[10px] text-white">
             <Link href="/">
               <a>Artvisionary</a>
             </Link>
@@ -59,13 +59,15 @@ const Header = () => {
                   className={
                     currentRoute === "/dashboard"
                       ? "text-white text-base font-medium"
-                      : "text-gray-500 font-normal hover:text-white"
+                      : "text-gray-500 font-normal hover:text-sky-500"  // 黒背景に対して見えるように、ホバーカラーを更新
                   }
                 >
                   Home
                 </a>
               </Link>
             </li>
+
+
             <li>
               <Link href="/createnft">
                 <a
@@ -106,8 +108,8 @@ const Header = () => {
 
       <section
         className={`${isOpen
-            ? `block fixed h-screen z-[999] w-screen  backdrop-blur-lg bg-[#000000]/60  top-0 left-0 transition-all font-body`
-            : `hidden`
+          ? `block fixed h-screen z-[999] w-screen  backdrop-blur-lg bg-[#000000]/60  top-0 left-0 transition-all font-body`
+          : `hidden`
           }`}
       >
         <div className="grid items-center justify-center h-screen grid-rows-3 text-center">
