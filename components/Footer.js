@@ -34,9 +34,7 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="title">Contact</h3>
-            <p className="desc">
-              2715 Ash Dr. San Jose, <br /> South Dakota 83475
-            </p>
+
           </div>
         </div>
         <div>
