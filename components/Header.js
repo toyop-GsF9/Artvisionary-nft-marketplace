@@ -21,6 +21,15 @@ const Header = () => {
     }
   };
 
+  // ウォレット接続の解除関数
+  const disconnectWallet = () => {
+    if (window.ethereum) {
+      window.ethereum.request({ method: 'eth_requestAccounts' });
+      localStorage.removeItem("walletAddress");
+      setAddr(""); // アドレスの状態をクリア
+    }
+  };
+
   useEffect(() => {
     document.addEventListener("scroll", changeNavbar);
   });
@@ -94,6 +103,12 @@ const Header = () => {
                 </a>
               </Link>
             </li>
+            <li>
+              <button onClick={disconnectWallet}>
+                Disconnect Wallet
+              </button>
+            </li>
+
           </ul>
 
           <p className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-800 sm:hidden">
