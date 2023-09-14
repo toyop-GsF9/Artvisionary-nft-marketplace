@@ -128,16 +128,18 @@ const Create = () => {
     return (
       <div className="justify-center items-center h-screen flex font-body flex-col">
         <h3 className="text-4xl font-bold sm:text-xl">
-          Let&apos;s initialise Bundlr now 💱
+          Let&apos;s Create now 💱
         </h3>
+        {/* Let&apos;s initialise Bundlr now 💱 */}
         <button
           className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 
             dark:focus:ring-blue-800 font-medium rounded-full text-sm px-8 py-5 text-center mr-2 mb-2 transition-all ease-in-out delay-150 duration-150
             hover:translate-y-1 text-1xl hover:shadow-lg hover:shadow-blue-500/80 mt-2 cursor-pointer outline-none border-none"
           onClick={initialiseBundlr}
         >
-          Initialise Bundlr 💸
+          Create 💸
         </button>
+        {/* Initialise Bundlr 💸 */}
       </div>
     );
   }
@@ -150,8 +152,9 @@ const Create = () => {
     return (
       <div className="flex flex-col items-center justify-center h-screen ">
         <h3 className="text-4xl font-body text-center">
-          Oops! Before Publishing NFT Please Add Some Funds.🪙
+          NFT作成用トークンを手に入れよう🪙
         </h3>
+        {/* Before Publishing NFT Please Add Some Funds.🪙 */}
         <FundWallet />
       </div>
     );
@@ -193,7 +196,7 @@ const Create = () => {
             ) : (
               <div className="h-full flex justify-center items-center">
                 <h2 className="text-center">
-                  Please Select Here to See Your File Preview
+                  画像を選択してください。
                 </h2>
               </div>
             )}
@@ -201,7 +204,7 @@ const Create = () => {
 
           <div className="w-full flex flex-col font-body gap-5">
             <div className="flex flex-col">
-              <label className="text-2xl my-1 font-semibold ">Name</label>
+              <label className="text-2xl my-1 font-semibold ">タイトル</label>
               <input
                 placeholder="eg.Kittos ka"
                 className="px-5 py-3 rounded-xl
@@ -214,7 +217,7 @@ const Create = () => {
             </div>
 
             <div className="flex flex-col">
-              <label className="text-2xl my-1 font-semibold">Description</label>
+              <label className="text-2xl my-1 font-semibold">説明文</label>
               <textarea
                 placeholder="eg.Kittos ka"
                 className="px-5 py-3 rounded-lg placeholder:text-slate-400 bg-[#272D37]/60 border-none outline-none placeholder:font-body tx font-body"
@@ -227,7 +230,7 @@ const Create = () => {
             </div>
 
             <div className="flex flex-col">
-              <label className="text-2xl my-1 font-semibold">Price</label>
+              <label className="text-2xl my-1 font-semibold">価格</label>
               <input
                 type="number"
                 placeholder="100"
