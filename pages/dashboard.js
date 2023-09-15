@@ -115,7 +115,7 @@ const Dashboard = () => {
         </div>
       ) : (
         <div className="relative overflow-hidden">
-          <h1 className="text-center">Hot NFTs</h1>
+          <h1 className="text-center">NFTs</h1>
           <button onClick={() => setIsModalOpen(true)}>Open Slideshow</button>
           {isModalOpen && (
             <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-70">
@@ -160,7 +160,7 @@ const Dashboard = () => {
                             });
                           }}
                         >
-                          View Details
+                          NFT詳細
                         </button>
                       </div>
                     </div>
@@ -179,7 +179,7 @@ const Dashboard = () => {
                         </div>
                       </div>
                       <div>
-                        <p className="my-1 text-[#8F9CA9]">Current Price</p>
+                        <p className="my-1 text-[#8F9CA9]">価格</p>
                         <h4 className="my-0 ">{nft.price} ETH</h4>
                       </div>
                     </div>
