@@ -104,7 +104,7 @@ const Dashboard = () => {
     <div className="relative ">
       {" "}
       <Head>
-        <title>Dashboard || Artvisionary</title>
+        <title>Playlist || Artvisionary</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
       <Header />
@@ -115,8 +115,10 @@ const Dashboard = () => {
         </div>
       ) : (
         <div className="relative overflow-hidden">
-          <h1 className="text-center">NFTs</h1>
-          {/* <button onClick={() => setIsModalOpen(true)}>Open Slideshow</button>
+          <h1 className="text-center">Playlist</h1>
+          <button className="mx-auto block text-lg py-2 px-4 rounded bg-blue-500 text-white" onClick={() => setIsModalOpen(true)}>Open Slideshow</button>
+          {/* 
+          <button onClick={() => setIsModalOpen(true)}>Open Slideshow</button> */}
           {isModalOpen && (
             <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-70">
               <div className="bg-white rounded-xl shadow-lg overflow-hidden max-w-full max-h-full relative">
@@ -128,7 +130,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-          )} */}
+          )}
 
 
           <section className="max-w-[1200px] my-20 mx-auto grid grid-cols-3 md:grid-cols-2 gap-4 font-body  overflow-hidden top-7 md:gap-5 medium md:px-5 sm:grid-cols-1 sm:h-full relative justify-center items-center ">
