@@ -56,7 +56,7 @@ const Header = () => {
               : `rounded-lg px-6 font-body flex items-center justify-between max-w-[1440px] my-2 mx-auto h-16 md:px-4 md:mx-5 bg-black sm:px-1 ssm:p-1 transition duration-250 ease-in-out`
           }
         >
-          <h2 className="text-2xl ssm:text-[10px] text-white">
+          <h2 className="text-2xl sm:text-3xl text-white">
             <Link href="/">
               <a>Artvisionary</a>
             </Link>
@@ -103,17 +103,29 @@ const Header = () => {
                 </a>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <button onClick={disconnectWallet}>
                 Disconnect Wallet
               </button>
-            </li>
-
+            </li> */}
           </ul>
 
+          {/* <button onClick={disconnectWallet}>
+            Disconnect Wallet
+          </button>
           <p className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-800 sm:hidden">
             {truncateEthAddress(addr)}
-          </p>
+          </p> */}
+
+          <div className="flex items-center justify-end space-x-4">
+            <button onClick={disconnectWallet} className="text-xs sm:text-sm bg-blue-600 px-1 sm:px-2 py-0.5 sm:py-1 rounded hover:bg-blue-700">
+              Disconnect Wallet
+            </button>
+            <p className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-800 sm:hidden">
+              {truncateEthAddress(addr)}
+            </p>
+          </div>
+
 
           <div className="hidden sm:block cursor-pointer" onClick={toggle}>
             <HambergerMenu size="32" color="#d9e3f0" />
