@@ -103,11 +103,19 @@ const Header = () => {
                 </a>
               </Link>
             </li>
-            {/* <li>
-              <button onClick={disconnectWallet}>
-                Disconnect Wallet
-              </button>
-            </li> */}
+            <li>
+              <Link href="/playlist">
+                <a
+                  className={
+                    currentRoute === "/profile"
+                      ? "text-white text-base font-medium"
+                      : "text-gray-500 font-normal hover:text-white"
+                  }
+                >
+                  Playlist
+                </a>
+              </Link>
+            </li>
           </ul>
 
           {/* <button onClick={disconnectWallet}>
