@@ -73,7 +73,7 @@ const NFTDetails = () => {
   return (
     <div>
       <Head>
-        <title>{nft.name} || Kittos</title>
+        <title>{nft.name} || Artvisionary</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
 
@@ -97,7 +97,7 @@ const NFTDetails = () => {
             <p className="text-[#ADB9C7]"> description: {nft.description}</p>
             <div>
               <p>Price</p>
-              <h2>{nft.price} ETH</h2>
+              <h2>{nft.price} MATIC</h2>
             </div>
             <div>
               <p>Owner </p>
@@ -117,7 +117,7 @@ const NFTDetails = () => {
 
             <div>
               <p>Blockchain</p>
-              <h2>Ethereum ⟠</h2>
+              <h2>Matic</h2>
             </div>
 
             <button
