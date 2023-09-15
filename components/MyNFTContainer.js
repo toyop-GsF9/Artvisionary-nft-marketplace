@@ -53,7 +53,7 @@ const MyNFTContainer = ({ nft }) => {
             </div>
             <div>
               <p className="my-1 text-[#8F9CA9]">Current Price</p>
-              <h4 className="my-0 ">{nft.price} ETH</h4>
+              <h4 className="my-0 ">{nft.price} Matic</h4>
             </div>
           </div>
         </div>
