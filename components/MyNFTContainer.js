@@ -45,7 +45,7 @@ const MyNFTContainer = ({ nft }) => {
           <div className="h-[56px] flex justify-between">
             <div className="flex flex-row gap-2">
               <div>
-                <p className="my-1 text-base text-[#8F9CA9]">Creator </p>
+                <p className="my-1 text-base text-[#8F9CA9]">Owner</p>
                 <h4 className="my-0 ssm:text-sm text-transparent font-bold bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
                   {truncateEthAddress(nft.owner)}
                 </h4>
