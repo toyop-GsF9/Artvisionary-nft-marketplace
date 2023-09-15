@@ -117,7 +117,7 @@ const NFTDetails = () => {
 
             <div>
               <p>Blockchain</p>
-              <h2>Matic</h2>
+              <h2>Mumbai</h2>
             </div>
 
             <button
