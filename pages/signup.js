@@ -15,7 +15,7 @@ export default function Signup() {
 					<Image alt="" src="/images/gradation-1@2x.png" layout="fill" objectFit="cover" />
 				</div>
 
-				<div className="max-w-screen-xl mx-auto px-4 py-20 z-10 space-y-8 sm:px-8 md:px-12">
+				<div className="max-w-screen-xl mx-auto px-4 py-10 z-10 space-y-8 sm:px-8 md:px-12">
 					<div className="text-3xl leading-[150%] font-medium tracking-tighter mb-10 lg:mb-5">
 						<p>Sign up</p>
 					</div>
