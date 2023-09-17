@@ -22,12 +22,12 @@ export default function ProfileArtist() {
 				<p className="m-0">&nbsp;</p>
 			</div>
 
-			<img className="absolute top-[160px] left-[1010px] w-[200px] h-[200px] object-cover" alt="絵１" src="/painting1.png" />
+			<img className="absolute top-[160px] left-[1010px] w-[200px] h-[200px] object-cover" alt="絵１" src="/images/painting1.png" />
 
 			<div className="absolute top-[35.28%] right-[15.21%] bottom-[61.39%] left-[15.59%] text-center text-[var(--font-size-13xl)]">
 				<div className="absolute top-0 left-[360px] font-medium">member登録</div>
-				<img className="absolute top-[24px] left-[-100px] w-[350px] h-0.5" alt="" src="/vector-3.svg" />
-				<img className="absolute top-[24px] left-[646px] w-[350px] h-0.5" alt="" src="/vector-4.svg" />
+				<img className="absolute top-[24px] left-[-100px] w-[350px] h-0.5" alt="" src="/images/vector-3.svg" />
+				<img className="absolute top-[24px] left-[646px] w-[350px] h-0.5" alt="" src="/images/vector-4.svg" />
 			</div>
 
 			<div className="relative top-[616px] left-[223px] w-[203px] h-[203px] text-center text-black text-base">
