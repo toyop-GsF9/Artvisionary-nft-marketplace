@@ -1,7 +1,5 @@
-// pages/signup.js
-
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from 'next/head';
+import Image from 'next/image';
 
 export default function Signup() {
 	return (
@@ -10,45 +8,68 @@ export default function Signup() {
 				<title>ArtVisionary</title>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="initial-scale=1, width=device-width" />
-				{/* <link rel="stylesheet" href="/global.css" />
-				<link rel="stylesheet" href="/signup.css" />
-				<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
-				<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma:wght@400&display=swap" />
-				<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400&display=swap" />
-				<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Istok+Web:wght@700&display=swap" /> */}
 			</Head>
 
-			<div className="relative bg-white w-full h-[930px] overflow-hidden text-center text-[#696969] font-inter">
-				<Image className="absolute top-0 left-0 object-cover" alt="" src="/images/gradation-1@2x.png" width={1440} height={930} />
-
-				<div className="absolute top-[106px] left-[255px] w-[930px] h-[645px]">
-					<div className="absolute top-0 left-[408px] text-lg leading-[150%] font-medium w-[113px] h-[78px] tracking-tighter">
-						<p className="m-0 text-lg">Sign up</p>
-					</div>
-					<div className="absolute top-[110px] left-0 w-[930px] h-[535px] text-left text-xs">
-						<div className="text-lg mb-5 w-[185px] h-[24px]">お名前（フルネーム）</div>
-						<div className="relative rounded-[5px] bg-[whitesmoke] border border-black w-[930px] h-[55px] mb-5"></div>
-
-						<div className="text-lg mb-5 w-[252px]">フリガナ（フルネーム）</div>
-						<div className="relative rounded-[5px] bg-[whitesmoke] border border-black w-[930px] h-[55px] mb-5"></div>
-
-						<div className="text-lg mb-5 w-[280px]">ログインメールアドレス（半角）</div>
-						<div className="relative rounded-[5px] bg-[whitesmoke] border border-black w-[930px] h-[55px] mb-5"></div>
-
-						<div className="text-lg mb-5 w-[340px]">パスワード（半角英数記号８文字以上）</div>
-						<div className="relative rounded-[5px] bg-[whitesmoke] border border-black w-[930px] h-[55px] mb-5"></div>
-
-						<div className="text-lg mb-5 w-[280px]">パスワード（確認用）</div>
-						<div className="relative rounded-[5px] bg-[whitesmoke] border border-black w-[930px] h-[55px] mb-5"></div>
-					</div>
-
-					<div className="relative w-[930px] h-[60px] text-white text-xl">
-						<div className="relative rounded-[5px] bg-[cadetblue] w-[930px] h-[55px] mt-5 flex items-center justify-center">
-							<p className="text-xl">submit</p>
-						</div>
-					</div>
+			<div className="relative w-full min-h-screen overflow-hidden text-center text-[#696969] font-inter">
+				<div className="absolute inset-0 z-[-1]">
+					<Image alt="" src="/images/gradation-1@2x.png" layout="fill" objectFit="cover" />
 				</div>
+
+				<div className="max-w-screen-xl mx-auto px-4 py-20 z-10 space-y-8 sm:px-8 md:px-12">
+					<div className="text-3xl leading-[150%] font-medium tracking-tighter mb-10 lg:mb-5">
+						<p>Sign up</p>
+					</div>
+					<form className="space-y-5 w-full md:max-w-xl mx-auto">
+
+						<label className="text-lg block">お名前（フルネーム）</label>
+						<div className="relative rounded-[5px] bg-[whitesmoke] border border-black h-[55px]">
+							<input
+								type="text"
+								className="bg-transparent w-full h-full px-3 py-2 border-none outline-none"
+								placeholder="お名前を入力してください"
+							/>
+						</div>
+
+						<label className="text-lg block">フリガナ（フルネーム）</label>
+						<div className="relative rounded-[5px] bg-[whitesmoke] border border-black h-[55px]">
+							<input
+								type="text"
+								className="bg-transparent w-full h-full px-3 py-2 border-none outline-none"
+								placeholder="フリガナを入力してください"
+							/>
+						</div>
+
+						<label className="text-lg block">ログインメールアドレス（半角）</label>
+						<div className="relative rounded-[5px] bg-[whitesmoke] border border-black h-[55px]">
+							<input
+								type="text"
+								className="bg-transparent w-full h-full px-3 py-2 border-none outline-none"
+								placeholder="メールアドレスを入力してください"
+							/>
+						</div>
+						<label className="text-lg block">パスワード（半角英数記号８文字以上）</label>
+						<div className="relative rounded-[5px] bg-[whitesmoke] border border-black h-[55px]">
+							<input
+								type="text"
+								className="bg-transparent w-full h-full px-3 py-2 border-none outline-none"
+								placeholder="パスワードを入力してください"
+							/>
+						</div>
+						<label className="text-lg block">パスワード（確認用）</label>
+						<div className="relative rounded-[5px] bg-[whitesmoke] border border-black h-[55px]">
+							<input
+								type="text"
+								className="bg-transparent w-full h-full px-3 py-2 border-none outline-none"
+								placeholder="パスワードを入力してください"
+							/>
+						</div>
+					</form>
+				</div>
+				<button type="submit" className="mt-8 w-full sm:w-1/2 md:w-1/4 mx-auto rounded-[5px] bg-[cadetblue] h-[55px] flex items-center justify-center">
+					<p className="text-xl text-white">submit</p>
+				</button>
 			</div>
+
 		</>
-	)
+	);
 }
