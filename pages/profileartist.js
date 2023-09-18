@@ -1,6 +1,40 @@
 import Head from 'next/head';
+import { useState } from 'react';
 
 export default function ProfileArtist() {
+	const [artistName, setArtistName] = useState('');
+	const [profile, setProfile] = useState('');
+	const [pr, setPR] = useState('');
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		// データをJSON形式で送信する
+		const formData = {
+			artistName,
+			profile,
+			pr
+		};
+
+		try {
+			const response = await fetch('YOUR_BACKEND_ENDPOINT_HERE', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(formData)
+			});
+
+			if (!response.ok) {
+				throw new Error('Failed to submit data');
+			}
+
+			const data = await response.json();
+			console.log(data);
+		} catch (error) {
+			console.error('There was an error submitting the form', error);
+		}
+	};
 	return (
 		<div className="flex flex-col w-full min-h-screen text-white font-[var(--font-inter)] bg-black">
 			<Head>
@@ -41,44 +75,46 @@ export default function ProfileArtist() {
 				</div>
 			</div>
 
-			<div className="flex flex-col items-center mt-4">
-				<label className="w-full max-w-xl leading-[150%] font-medium tracking-tight">
-					登録名（アーチスト名）
-					<input type="text" className="w-full h-[48px] mt-2 bg-gray-200 border border-black rounded-[var(--br-xs)] p-2" />
-				</label>
+			<form onSubmit={handleSubmit}>
+				<div className="flex flex-col items-center mt-4">
+					<label className="w-full max-w-xl leading-[150%] font-medium tracking-tight">
+						登録名（アーチスト名）
+						<input type="text" className="w-full h-[48px] mt-2 bg-gray-200 border border-black rounded-[var(--br-xs)] p-2" />
+					</label>
 
-				<label className="w-full max-w-xl leading-[150%] font-medium tracking-tight mt-4">
-					プロフィール
-					<textarea className="w-full h-[140px] mt-2 bg-gray-200 border border-black rounded-[var(--br-xs)] p-2"></textarea>
-				</label>
+					<label className="w-full max-w-xl leading-[150%] font-medium tracking-tight mt-4">
+						プロフィール
+						<textarea className="w-full h-[140px] mt-2 bg-gray-200 border border-black rounded-[var(--br-xs)] p-2"></textarea>
+					</label>
 
-				<label className="w-full max-w-2xl leading-[150%] font-medium tracking-tight mt-4">
-					PR (アーチスト活動歴)
-					<textarea className="w-full h-[360px] mt-2 bg-gray-200 border border-black rounded-[var(--br-xs)] p-2"></textarea>
-				</label>
-			</div>
-
-			<div className="flex flex-col items-center justify-center h-full">
-				<div className="flex flex-col items-center space-y-4 w-full max-w-2xl mt-4">
-					<div className="w-full max-w-md leading-[150%] font-medium tracking-tight text-white">
-						<p className="m-0">
-							利用規約を必ずお読みいただき、同意の上、登録をしてください。
-						</p>
-						<label className="cursor-pointer mt-2">
-							<input type="checkbox" className="mr-2" />
-							利用規約に同意する
-						</label>
-					</div>
-
-					<button className="w-full max-w-xl h-[58px] bg-#666 rounded-[var(--br-xs)] flex items-center justify-center text-lg text-white mt-2">
-						登録/更新する
-					</button>
+					<label className="w-full max-w-2xl leading-[150%] font-medium tracking-tight mt-4">
+						PR (アーチスト活動歴)
+						<textarea className="w-full h-[360px] mt-2 bg-gray-200 border border-black rounded-[var(--br-xs)] p-2"></textarea>
+					</label>
 				</div>
 
-				<button className="w-[117px] h-[21px] border border-white rounded-[8px] flex items-center justify-center text-[var(--font-size-3xs)] text-white mt-4 mb-4">
-					削除する
-				</button>
-			</div>
+				<div className="flex flex-col items-center justify-center h-full">
+					<div className="flex flex-col items-center space-y-4 w-full max-w-2xl mt-4">
+						<div className="w-full max-w-md leading-[150%] font-medium tracking-tight text-white">
+							<p className="m-0">
+								利用規約を必ずお読みいただき、同意の上、登録をしてください。
+							</p>
+							<label className="cursor-pointer mt-2">
+								<input type="checkbox" className="mr-2" />
+								利用規約に同意する
+							</label>
+						</div>
+
+						<button type="submit" className="w-full max-w-xl h-[58px] bg-#666 rounded-[var(--br-xs)] flex items-center justify-center text-lg text-white mt-2">
+							登録/更新する
+						</button>
+					</div>
+
+					<button className="w-[117px] h-[21px] border border-white rounded-[8px] flex items-center justify-center text-[var(--font-size-3xs)] text-white mt-4 mb-4">
+						削除する
+					</button>
+				</div>
+			</form>
 
 		</div>
 	);
