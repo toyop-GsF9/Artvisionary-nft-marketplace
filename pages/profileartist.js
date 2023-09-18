@@ -54,7 +54,7 @@ export default function ProfileArtist() {
 					</p>
 				</div>
 
-				<img className="w-48 md:w-48 h-48 md:h-48 object-cover mt-4 md:mt-4" alt="絵１" src="/images/painting1.png" />
+				<img className="w-44 md:w-44 h-44 md:h-44 object-cover mt-4 md:mt-4" alt="絵１" src="/images/painting1.png" />
 			</div>
 
 
