@@ -161,9 +161,9 @@ const Dashboard = () => {
                   <button onClick={prevSlide}>Previous</button>
                   <button onClick={() => setIsModalOpen(false)}>Close</button>
                   <button onClick={nextSlide}>Next</button>
-                  <button onClick={() => changeAspectRatio('3:2')}>3:2 Aspect Ratio</button>
-                  <button onClick={() => changeAspectRatio('9:16')}>9:16 Aspect Ratio</button>
-                  <button onClick={() => changeAspectRatio('1:1')}>1:1 Aspect Ratio</button>
+                  <button onClick={() => changeAspectRatio('3:2')}>3:2 </button>
+                  <button onClick={() => changeAspectRatio('9:16')}>9:16 </button>
+                  <button onClick={() => changeAspectRatio('1:1')}>1:1 </button>
                 </div>
               </div>
             </div>
