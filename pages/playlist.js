@@ -16,6 +16,20 @@ const Dashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
+  const [aspectRatio, setAspectRatio] = useState('3:2'); // default to 3:2
+  const getAspectRatioClass = (ratio) => {
+    switch (ratio) {
+      case '3:2':
+        return 'aspect-w-3 aspect-h-2';
+      case '9:16':
+        return 'aspect-w-9 aspect-h-16';
+      case '1:1':
+        return 'aspect-w-1 aspect-h-1';
+      default:
+        return 'aspect-w-3 aspect-h-2';
+    }
+  };
+
   const router = useRouter();
 
   const getContract = async () => {
@@ -62,6 +76,8 @@ const Dashboard = () => {
     }
   };
 
+
+
   useEffect(() => {
     getNfts();
   }, []);
@@ -98,6 +114,10 @@ const Dashboard = () => {
     setCurrentSlideIndex((prevIndex) => (prevIndex - 1 + nfts.length) % nfts.length);
   };
 
+  const changeAspectRatio = (ratio) => {
+    setAspectRatio(ratio);
+  };
+
 
 
   return (
@@ -107,7 +127,7 @@ const Dashboard = () => {
         <title>Playlist || Artvisionary</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
-      <Header />
+      {!isModalOpen && <Header />}
       <div className="bg-[#1242ef] absolute left-[-250px] top-[-210px] h-[352px] w-[652px] blur-[350px] rounded-full "></div>
       {!nfts.length ? (
         <div className="w-full h-50 flex flex-col items-center justify-center font-body">
@@ -117,20 +137,38 @@ const Dashboard = () => {
         <div className="relative overflow-hidden">
           <h1 className="text-center">Playlist</h1>
           <button className="mx-auto block text-lg py-2 px-4 rounded bg-blue-500 text-white" onClick={() => setIsModalOpen(true)}>Open Slideshow</button>
-          {/* 
-          <button onClick={() => setIsModalOpen(true)}>Open Slideshow</button> */}
-          {isModalOpen && (
+          {/* <button className="mx-auto block text-lg py-2 px-4 rounded bg-blue-500 text-white" onClick={() => router.push('/slideshow')}>Open Slideshow</button> */}
+
+          {/* <button onClick={() => changeAspectRatio('3:2')}>3:2 Aspect Ratio</button>
+          <button onClick={() => changeAspectRatio('9:16')}>9:16 Aspect Ratio</button>
+          <button onClick={() => changeAspectRatio('1:1')}>1:1 Aspect Ratio</button> */}
+
+
+          {/* {isModalOpen && (
             <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-70">
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden max-w-full max-h-full relative">
-                <img src={mainURL + nfts[currentSlideIndex]?.image} alt={nfts[currentSlideIndex]?.name} className="max-w-full max-h-[80vh] mx-auto" />
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden max-w-full max-h-full relative"> */}
+          {/* <img src={mainURL + nfts[currentSlideIndex]?.image} alt={nfts[currentSlideIndex]?.name} className="max-w-full max-h-[80vh] mx-auto" /> */}
+          {isModalOpen && (
+            <div className="fixed top-0 left-0 w-full h-full z-50 bg-black bg-opacity-70 flex items-center justify-center">
+              <div className="w-full h-full bg-white relative">
+                <img
+                  src={mainURL + nfts[currentSlideIndex]?.image}
+                  alt={nfts[currentSlideIndex]?.name}
+                  className="absolute inset-0 object-cover w-full h-full"
+                />
+
                 <div className="flex justify-between p-4 absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 text-white">
                   <button onClick={prevSlide}>Previous</button>
                   <button onClick={() => setIsModalOpen(false)}>Close</button>
                   <button onClick={nextSlide}>Next</button>
+                  <button onClick={() => changeAspectRatio('3:2')}>3:2 Aspect Ratio</button>
+                  <button onClick={() => changeAspectRatio('9:16')}>9:16 Aspect Ratio</button>
+                  <button onClick={() => changeAspectRatio('1:1')}>1:1 Aspect Ratio</button>
                 </div>
               </div>
             </div>
           )}
+
 
 
           <section className="max-w-[1200px] my-20 mx-auto grid grid-cols-3 md:grid-cols-2 gap-4 font-body  overflow-hidden top-7 md:gap-5 medium md:px-5 sm:grid-cols-1 sm:h-full relative justify-center items-center ">
