@@ -56,9 +56,9 @@ export default function Home() {
               Artvisionary <br />
             </h1>
             <p className="text-[#ADB9C7] sm:text-center">
-              Artvisionary is the primier marketplace for NFT, which are digital items
+              {/* Artvisionary is the primier marketplace for NFT, which are digital items
               you can truly own. Digital items have existed for a long time, but
-              never like this.
+              never like this. */}
             </p>
             {addr ? (
               <button
