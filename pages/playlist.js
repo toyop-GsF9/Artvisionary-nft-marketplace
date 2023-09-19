@@ -1,12 +1,13 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
-import { Footer, Header } from "../components";
+import { Footer, Header, Slideshow } from "../components";
 import ContractABI from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { ethers } from "ethers";
 import { truncateEthAddress } from "../utils/truncAddress";
 import { useRouter } from "next/router";
+
 
 const mainURL = `https://arweave.net/`;
 
@@ -148,7 +149,7 @@ const Dashboard = () => {
             <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-70">
               <div className="bg-white rounded-xl shadow-lg overflow-hidden max-w-full max-h-full relative"> */}
           {/* <img src={mainURL + nfts[currentSlideIndex]?.image} alt={nfts[currentSlideIndex]?.name} className="max-w-full max-h-[80vh] mx-auto" /> */}
-          {isModalOpen && (
+          {/* {isModalOpen && (
             <div className="fixed top-0 left-0 w-full h-full z-50 bg-black bg-opacity-70 flex items-center justify-center">
               <div className="w-full h-full bg-white relative">
                 <img
@@ -167,8 +168,17 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-          )}
-
+          )} */}
+          <Slideshow
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
+            nfts={nfts}
+            currentSlideIndex={currentSlideIndex}
+            mainURL={mainURL}
+            prevSlide={prevSlide}
+            nextSlide={nextSlide}
+            changeAspectRatio={changeAspectRatio}
+          />
 
 
           <section className="max-w-[1200px] my-20 mx-auto grid grid-cols-3 md:grid-cols-2 gap-4 font-body  overflow-hidden top-7 md:gap-5 medium md:px-5 sm:grid-cols-1 sm:h-full relative justify-center items-center ">
