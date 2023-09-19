@@ -105,12 +105,12 @@ export default function ProfileArtist() {
 							</label>
 						</div>
 
-						<button type="submit" className="w-full max-w-xl h-[58px] bg-#666 rounded-[var(--br-xs)] flex items-center justify-center text-lg text-white mt-2">
+						<button type="submit" className="w-full max-w-xl h-[58px] bg-#666 rounded-[var(--br-xs)] flex items-center justify-center text-lg  mt-2">
 							登録/更新する
 						</button>
 					</div>
 
-					<button className="w-[117px] h-[21px] border border-white rounded-[8px] flex items-center justify-center text-[var(--font-size-3xs)] text-white mt-4 mb-4">
+					<button className="w-[117px] h-[21px] border border-white rounded-[8px] flex items-center justify-center text-[var(--font-size-3xs)]  mt-4 mb-4">
 						削除する
 					</button>
 				</div>
