@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 const mainURL = `https://arweave.net/`;
 
 const Dashboard = () => {
-  const [nfts, setNts] = useState([]);
+  const [nfts, setNfts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -69,7 +69,7 @@ const Dashboard = () => {
           return item;
         })
       );
-      setNts(items);
+      setNfts(items);
       setLoading(true);
     } catch (error) {
       console.error(error);
