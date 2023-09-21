@@ -78,6 +78,8 @@ export default function Home() {
               </button>
             )}
           </div>
+
+
           <div className="w-full flex items-center justify-center">
             <div className="w-[400px] h-[536px] bg-[#272D37]/60 rounded-2xl flex flex-col p-6 sm:h-max">
               <Image
@@ -109,6 +111,8 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+
         </section>
 
         <section className="max-w-[1240px] my-20 mx-auto  gap-2 font-body top-7 ">
@@ -118,7 +122,7 @@ export default function Home() {
             {data.map((item) => (
               <div
                 key={item.id}
-                className="w-full bg-[#272D37] flex flex-col justify-center items-center p-3 rounded-xl"
+                className="w-full bg-[#52565e] flex flex-col justify-center items-center p-3 rounded-xl"
               >
                 <div className="w-[80px] h-[80px] flex  justify-center items-center ">
                   <img
@@ -139,12 +143,12 @@ export default function Home() {
         </section>
 
         <section className="max-w-[1240px] my-20 mx-auto  gap-2 font-body top-7 ">
-          <h2 className="sm:text-center md:mx-10">Featured Artist </h2>
+          <h1 className="text-center w-full">Playlist</h1>
           <div className="grid grid-cols-4 gap-3 sm:gap-y-8 md:grid-cols-2 sm:grid-cols-1 sm:p-12 md:mx-10">
             {mockartist.map((data) => (
               <div
                 key={data.id}
-                className="w-full bg-[#272D37] flex flex-col justify-center items-center p-3 rounded-xl"
+                className="w-full bg-[#52565e] flex flex-col justify-center items-center p-3 rounded-xl"
               >
                 <div className="w-full relative">
                   <img
@@ -153,16 +157,16 @@ export default function Home() {
                     layout="responsive"
                     className="w-full rounded-2xl h-[225px]"
                   />
-                  <img
+                  {/* <img
                     src={data.image}
                     alt={data.name}
                     layout="intrinsic"
                     className="absolute -bottom-[40px] left-0 right-0 mx-auto h-[104px] w-[104px] bg-[#272D37] rounded-full"
-                  />
+                  /> */}
                 </div>
                 <div className="w-full text-center mt-8 font-bold">
                   <h3>{data.name}</h3>
-                  <p>Price: {data.price}</p>
+                  {/* <p>Price: {data.price}</p> */}
                 </div>
               </div>
             ))}
@@ -170,7 +174,7 @@ export default function Home() {
         </section>
 
         {/* Community */}
-        <section className="max-w-[1240px] bg- my-20 mx-auto bg-[#272D37] gap-2 font-body top-7 text-center p-10 rounded-xl sm:mx-10 md:m-10 border border-solid border-sky-600">
+        <section className="max-w-[1240px] bg- my-20 mx-auto bg-[#52565e] gap-2 font-body top-7 text-center p-10 rounded-xl sm:mx-10 md:m-10 border border-solid border-sky-600">
           <div>
             <h1 className="text-4xl sm:text-2xl">Create Your Own NFT!</h1>
             {/* <p className="text-[#ADB9C7] px-[120px] sm:p-2 ms:p-1">
