@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { ethers } from "ethers";
 // import { truncateEthAddress } from "../utils/truncAddress";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 
 const mainURL = `https://arweave.net/`;
@@ -14,6 +14,11 @@ export default function Square() {
   const [nfts, setNfts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const router = useRouter();
+
+  const handleGoBack = () => {
+    router.push('/playlist');
+  };
 
 
   const getContract = async () => {
@@ -129,7 +134,7 @@ export default function Square() {
             />
             <div className="flex justify-between p-4 absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 text-white">
               <button onClick={prevSlide}>前へ</button>
-              <button onClick={() => setIsModalOpen(false)}>閉じる</button>
+              <button onClick={handleGoBack}>戻る</button>
               <button onClick={nextSlide}>次へ</button>
               {/* <button onClick={() => changeAspectRatio('3:2')}>3:2 </button>
             <button onClick={() => changeAspectRatio('9:16')}>9:16 </button>
