@@ -200,6 +200,19 @@ const Header = () => {
                 </a>
               </Link>
             </li>
+            <li>
+              <Link href="/sample-playlist">
+                <a
+                  className={
+                    currentRoute === "/profile"
+                      ? "text-white text-base font-medium"
+                      : "text-gray-500 font-normal hover:text-white"
+                  }
+                >
+                  Playlist
+                </a>
+              </Link>
+            </li>
           </ul>
 
           <p className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-800 ">
