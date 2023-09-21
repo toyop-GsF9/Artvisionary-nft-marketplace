@@ -83,7 +83,7 @@ export default function Home() {
           <div className="w-full flex items-center justify-center">
             <div className="w-[400px] h-[536px] bg-[#272D37]/60 rounded-2xl flex flex-col p-6 sm:h-max">
               <Image
-                src="/images/mock.png"
+                src="/images/X-ray6.jpeg"
                 alt="mock"
                 height={352}
                 width={352}
