@@ -150,28 +150,23 @@ export default function Home() {
                 key={data.id}
                 className="w-full bg-[#52565e] flex flex-col justify-center items-center p-3 rounded-xl"
               >
-                <div className="w-full relative">
+                <div className="w-full relative" style={{ paddingBottom: '100%' }}>
                   <img
                     src={data.bgImage}
                     alt={data.name}
                     layout="responsive"
-                    className="w-full rounded-2xl h-[225px]"
+                    className="absolute w-full h-full rounded-2xl object-fit: contain" // ここでobject-fit: containとh-fullを追加
                   />
-                  {/* <img
-                    src={data.image}
-                    alt={data.name}
-                    layout="intrinsic"
-                    className="absolute -bottom-[40px] left-0 right-0 mx-auto h-[104px] w-[104px] bg-[#272D37] rounded-full"
-                  /> */}
                 </div>
                 <div className="w-full text-center mt-8 font-bold">
                   <h3>{data.name}</h3>
-                  {/* <p>Price: {data.price}</p> */}
                 </div>
               </div>
             ))}
           </div>
         </section>
+
+
 
         {/* Community */}
         <section className="max-w-[1240px] bg- my-20 mx-auto bg-[#52565e] gap-2 font-body top-7 text-center p-10 rounded-xl sm:mx-10 md:m-10 border border-solid border-sky-600">
