@@ -10,7 +10,7 @@ import { ethers } from "ethers";
 
 const mainURL = `https://arweave.net/`;
 
-export default function square() {
+export default function Square() {
   const [nfts, setNfts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
