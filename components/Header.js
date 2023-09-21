@@ -104,7 +104,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/playlist">
+              <Link href="/sample-playlist">
                 <a
                   className={
                     currentRoute === "/profile"
