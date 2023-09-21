@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import { useRouter } from "next/router";
 
 export default function Sampleplay() {
 	const playlists = {
@@ -33,6 +34,11 @@ export default function Sampleplay() {
 			"/images/spaceboys.jpeg",
 			"/images/spacewomen.png"
 		]
+	};
+	const router = useRouter();
+
+	const handleGoBack = () => {
+		router.push('/playlist');
 	};
 
 
@@ -71,30 +77,22 @@ export default function Sampleplay() {
 				<link rel="shortcut icon" href="logo.png" />
 			</Head>
 
-			<div className="relative w-full h-[930px] overflow-hidden text-left text-sm text-gray-600 bg-white">
-				<div className="absolute top-0 left-0 w-[1440px] h-[930px] bg-black"></div>
-				<div className="absolute top-[144px] left-[399px] w-[642px] h-[642px] bg-[#1a1a1a]">
-					<div className="w-full h-full bg-white relative">
-						<div className="absolute top-[-40px] left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white text-3xl font-semibold p-2 rounded">
-							{currentPlaylist}
-						</div>
-						<img
-							src={playlists[currentPlaylist][currentSlideIndex]}
-							alt={`Image from ${currentPlaylist} ${currentSlideIndex + 1}`}
-							className="absolute inset-0 object-cover w-full h-full"
-						/>
-
-
-
-						<div className="flex justify-between p-4 absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 text-white">
-							<button onClick={prevSlide}>前へ</button>
-							<button onClick={nextSlide}>次へ</button>
-
-						</div>
-
-
+			<div className="flex items-center justify-center w-full h-screen bg-black">
+				<div className="relative bg-black rounded-lg max-w-lg w-full max-h-[80%] h-auto">
+					<img
+						src={playlists[currentPlaylist][currentSlideIndex]}
+						alt={`Image from ${currentPlaylist} ${currentSlideIndex + 1}`}
+						className="object-cover w-full h-full rounded-lg"
+					/>
+					<div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white text-3xl font-semibold p-2 rounded">
+						{currentPlaylist}
 					</div>
-					<div className="genre-list flex space-x-4 p-4">
+					<div className="flex justify-between p-4 absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 text-white rounded-b-lg">
+						<button onClick={prevSlide}>前へ</button>
+						<button onClick={handleGoBack}>戻る</button>
+						<button onClick={nextSlide}>次へ</button>
+					</div>
+					<div className="absolute bottom-[-4rem] left-1/2 transform -translate-x-1/2 flex space-x-4 p-4">
 						{Object.keys(playlists).map((genre) => (
 							<button
 								key={genre}
@@ -104,23 +102,11 @@ export default function Sampleplay() {
 							</button>
 						))}
 					</div>
-
 				</div>
-
-				<div className="absolute top-[426px] left-[1159px] w-[179px] h-[360px] rounded-[20px] border border-gray-600 box-border"></div>
-				<img className="absolute top-[444px] left-[1181px] w-[36px] h-[36px] object-cover" alt="icon" src="/images/mask-group@2x.png" />
-				<div className="absolute top-[484px] left-[1181px] w-[138px] h-[26px] font-semibold">
-					<span className="underline">shin tanaka</span>
-				</div>
-				<div className="absolute top-[516px] left-[1181px] w-[138px] h-[26px] font-semibold">Point</div>
-				<hr className="absolute left-[1181px] top-[542px] w-[138px] border-t-[0.5px] border-gray-600" />
-				<div className="absolute top-[560px] left-[1181px] w-[139px] h-[68px] font-semibold">#noise #science</div>
-				<hr className="absolute left-[1181px] top-[612px] w-[138px] border-t-[0.5px] border-gray-600" />
-				<img className="absolute top-[634px] left-[1198px] w-[12px] h-[18px] object-cover rounded-[12px]" alt="ETH" src="/images/ethereum-1@2x.png" />
-				<div className="absolute top-[624px] left-[1217px] w-[69px] h-[37px] font-semibold leading-[36px]">0.01 ETH</div>
-				<button className="absolute top-[664px] left-[1218px] w-[60px] h-[24px] font-semibold leading-[24px] text-white bg-gray-600 rounded-[4px]">BUY</button>
-				<img className="absolute top-[703px] left-[1218px] w-[62px] h-[62px] object-cover" alt="QRコード" src="/images/-20230905-009-1@2x.png" />
 			</div>
+
 		</>
 	);
+
+
 }
