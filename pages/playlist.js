@@ -138,37 +138,7 @@ const Dashboard = () => {
         <div className="relative overflow-hidden">
           <h1 className="text-center">Playlist</h1>
           <button className="mx-auto block text-lg py-2 px-4 rounded bg-blue-500 text-white" onClick={() => setIsModalOpen(true)}>Open Slideshow</button>
-          {/* <button className="mx-auto block text-lg py-2 px-4 rounded bg-blue-500 text-white" onClick={() => router.push('/slideshow')}>Open Slideshow</button> */}
 
-          {/* <button onClick={() => changeAspectRatio('3:2')}>3:2 Aspect Ratio</button>
-          <button onClick={() => changeAspectRatio('9:16')}>9:16 Aspect Ratio</button>
-          <button onClick={() => changeAspectRatio('1:1')}>1:1 Aspect Ratio</button> */}
-
-
-          {/* {isModalOpen && (
-            <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-70">
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden max-w-full max-h-full relative"> */}
-          {/* <img src={mainURL + nfts[currentSlideIndex]?.image} alt={nfts[currentSlideIndex]?.name} className="max-w-full max-h-[80vh] mx-auto" /> */}
-          {/* {isModalOpen && (
-            <div className="fixed top-0 left-0 w-full h-full z-50 bg-black bg-opacity-70 flex items-center justify-center">
-              <div className="w-full h-full bg-white relative">
-                <img
-                  src={mainURL + nfts[currentSlideIndex]?.image}
-                  alt={nfts[currentSlideIndex]?.name}
-                  className="absolute inset-0 object-cover w-full h-full"
-                />
-
-                <div className="flex justify-between p-4 absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 text-white">
-                  <button onClick={prevSlide}>Previous</button>
-                  <button onClick={() => setIsModalOpen(false)}>Close</button>
-                  <button onClick={nextSlide}>Next</button>
-                  <button onClick={() => changeAspectRatio('3:2')}>3:2 </button>
-                  <button onClick={() => changeAspectRatio('9:16')}>9:16 </button>
-                  <button onClick={() => changeAspectRatio('1:1')}>1:1 </button>
-                </div>
-              </div>
-            </div>
-          )} */}
           <Slideshow
             isModalOpen={isModalOpen}
             setIsModalOpen={setIsModalOpen}
