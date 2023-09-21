@@ -4,7 +4,7 @@ import data from "../constants/mock-nft.json";
 import mockartist from "../constants/mock-artist.json";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Footer, Header } from "../components";
+import { Footer, Header, Slideshow2 } from "../components";
 
 export default function Home() {
   const [isWalletConnected, setIsWalletConnected] = useState(false);
@@ -36,6 +36,16 @@ export default function Home() {
     const addr = localStorage.getItem("walletAddress");
     setAddr(addr);
   }, []);
+
+  const playlists = {
+
+    ColorfulAnimal: [
+      "/images/colorfulcat1.jpeg",
+      "/images/colorfulcat2.jpeg",
+      "/images/colorfuldog.jpeg",
+      "/images/colorfulelephant.jpeg"
+    ]
+  };
 
   return (
     <div className="">
@@ -82,13 +92,14 @@ export default function Home() {
 
           <div className="w-full flex items-center justify-center">
             <div className="w-[400px] h-[536px] bg-[#272D37]/60 rounded-2xl flex flex-col p-6 sm:h-max">
-              <Image
+              <Slideshow2 playlists={playlists} width="352" height="352" />
+              {/* <Image
                 src="/images/X-ray6.jpeg"
                 alt="mock"
                 height={352}
                 width={352}
                 layout="intrinsic"
-              ></Image>
+              ></Image> */}
               <div className="">
                 <h1>example</h1>
                 <div className="h-[56px] flex justify-between">
