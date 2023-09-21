@@ -43,7 +43,22 @@ export default function Home() {
       "/images/colorfulcat1.jpeg",
       "/images/colorfulcat2.jpeg",
       "/images/colorfuldog.jpeg",
-      "/images/colorfulelephant.jpeg"
+      "/images/colorfulelephant.jpeg",
+      "/images/pixelart1.jpeg",
+      "/images/pixelart2.jpeg",
+      "/images/pixelart3.jpeg",
+      "/images/pixelart4.jpeg",
+      "/images/robot_1.jpeg",
+      "/images/robot_2.jpeg",
+      "/images/robot_3.jpeg",
+      "/images/robot_4.jpeg",
+      "/images/cell_1.jpeg",
+      "/images/cell_2.jpeg",
+      "/images/cell_5.jpeg",
+      "/images/cell_6.jpeg",
+      "/images/space alien.png",
+      "/images/spaceboys.jpeg",
+      "/images/spacewomen.png"
     ]
   };
 
