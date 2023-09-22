@@ -154,10 +154,11 @@ export default function Square() {
                 <div className="flex items-center w-[69px] h-[50px] font-semibold leading-[36px]">0.01 ETH</div>
               </div>
             </div>
-
           </div>
         </div>
-
+        {/* <div className="w-[136px]  h-[136px]  bg-white  rounded p-1 z-10">
+          <QRCode value={nftDetailURL2} fgColor="#0067c0" className="w-[36px]  h-[36px]  " />
+        </div> */}
       </div>
     </>
   );
