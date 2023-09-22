@@ -74,20 +74,20 @@ const Dashboard = () => {
       }
     }, 3000);
 
-    useEffect(() => {
-      let timer;
+    //   useEffect(() => {
+    //     let timer;
 
-      if (!loading) {
-        // loadingがfalseの場合、10秒後に実行されるタイマーをセット
-        timer = setTimeout(() => {
+    //     if (!loading) {
+    //       // loadingがfalseの場合、10秒後に実行されるタイマーをセット
+    //       timer = setTimeout(() => {
 
-          // ホームページへのリダイレクト
-          router.push('/');
+    //         // ホームページへのリダイレクト
+    //         router.push('/');
 
-        }, 10000); // 10秒後
-      } // コンポーネントがアンマウントされたとき、またはloadingが変わったときにタイマーをクリア
-      return () => clearTimeout(timer);
-    }, [loading]);
+    //       }, 10000); // 10秒後
+    //     } // コンポーネントがアンマウントされたとき、またはloadingが変わったときにタイマーをクリア
+    //     return () => clearTimeout(timer);
+    //   }, [loading]);
 
     // クリーンアップ関数: タイマーを解除する
     return () => clearInterval(timer);
