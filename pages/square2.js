@@ -135,10 +135,26 @@ export default function Square() {
             alt={nfts[currentSlideIndex]?.name}
             className="object-contain min-w-[712px] min-h-[712px] max-w-[712px] max-h-[712px]" // 720 - 4 * 2 (border)
           />
-          <div className="flex justify-between p-4 absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 text-white">
-            <button onClick={prevSlide}>前へ</button>
+          {/* <div className="flex justify-between p-4 absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 text-white"> */}
+          {/* <button onClick={prevSlide}>前へ</button>
             <button onClick={handleGoBack}>戻る</button>
-            <button onClick={nextSlide}>次へ</button>
+            <button onClick={nextSlide}>次へ</button> */}
+          <div className="flex justify-between px-4 py-0 absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 text-white">
+
+            <div className="flex justify-between h-[50px] w-[720px] items-center space-x-4">
+              <div className="flex">
+                <img className="w-[36px] h-[36px] object-cover mr-1" alt="icon" src="/images/mask-group@2x.png" />
+                <div className="flex items-center h-[50px] font-semibold truncate mr-4">
+                  <span className="underline">shin tanaka</span>
+                </div>
+              </div>
+              <div className="font-semibold truncate mr-4">Point</div>
+              <div className="flex">
+                <img className="w-[36px] h-[36px] rounded-[9px] mr-0" alt="ETH" src="/images/ethereum-1@2x.png" />
+                <div className="flex items-center w-[69px] h-[50px] font-semibold leading-[36px]">0.01 ETH</div>
+              </div>
+            </div>
+
           </div>
         </div>
 
