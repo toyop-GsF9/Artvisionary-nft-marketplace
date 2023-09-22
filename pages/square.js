@@ -6,6 +6,7 @@ import axios from "axios";
 import { ethers } from "ethers";
 // import { truncateEthAddress } from "../utils/truncAddress";
 import { useRouter } from "next/router";
+import QRCode from 'qrcode.react';
 
 
 const mainURL = `https://arweave.net/`;
@@ -114,8 +115,9 @@ export default function Square() {
   const changeAspectRatio = (ratio) => {
     setAspectRatio(ratio);
   };
-
-
+  // NFTの詳細ページへのURLを取得
+  const nftDetailURL = `https://artvisionary02.vercel.app/nft-details?price=${nfts[currentSlideIndex]?.price}&tokenId=${nfts[currentSlideIndex]?.tokenId}&seller=${nfts[currentSlideIndex]?.seller}&owner=${nfts[currentSlideIndex]?.owner}&image=${encodeURIComponent(nfts[currentSlideIndex]?.image)}&name=${encodeURIComponent(nfts[currentSlideIndex]?.name)}&description=${encodeURIComponent(nfts[currentSlideIndex]?.description)}&tokenURI=${encodeURIComponent(nfts[currentSlideIndex]?.tokenURI)}`;
+  const nftDetailURL2 = `https://artvisionary02.vercel.app/dashboard`;
 
   return (
     <>
@@ -146,18 +148,26 @@ export default function Square() {
         </div>
 
         <div className="absolute top-[426px] left-[1159px] w-[179px] h-[360px] rounded-[20px] border border-gray-600 box-border"></div>
-        <img className="absolute top-[444px] left-[1181px] w-[36px] h-[36px] object-cover" alt="icon" src="/images/mask-group@2x.png" />
-        <div className="absolute top-[484px] left-[1181px] w-[138px] h-[26px] font-semibold">
+        <img className="absolute top-[444px] left-[1160px] w-[36px] h-[36px] object-cover" alt="icon" src="/images/mask-group@2x.png" />
+        <div className="absolute top-[484px] left-[1160px] w-[138px] h-[26px] font-semibold">
           <span className="underline">shin tanaka</span>
         </div>
-        <div className="absolute top-[516px] left-[1181px] w-[138px] h-[26px] font-semibold">Point</div>
-        <hr className="absolute left-[1181px] top-[542px] w-[138px] border-t-[0.5px] border-gray-600" />
-        <div className="absolute top-[560px] left-[1181px] w-[139px] h-[68px] font-semibold">#noise #science</div>
-        <hr className="absolute left-[1181px] top-[612px] w-[138px] border-t-[0.5px] border-gray-600" />
+        <div className="absolute top-[516px] left-[1160px] w-[138px] h-[26px] font-semibold">Point</div>
+        <hr className="absolute left-[1160px] top-[542px] w-[138px] border-t-[0.5px] border-gray-600" />
+        <div className="absolute top-[560px] left-[1160px] w-[139px] h-[68px] font-semibold">#noise #science</div>
+        <hr className="absolute left-[1160px] top-[612px] w-[138px] border-t-[0.5px] border-gray-600" />
         <img className="absolute top-[634px] left-[1198px] w-[12px] h-[18px] object-cover rounded-[12px]" alt="ETH" src="/images/ethereum-1@2x.png" />
         <div className="absolute top-[624px] left-[1217px] w-[69px] h-[37px] font-semibold leading-[36px]">0.01 ETH</div>
         <button className="absolute top-[664px] left-[1218px] w-[60px] h-[24px] font-semibold leading-[24px] text-white bg-gray-600 rounded-[4px]">BUY</button>
-        <img className="absolute top-[703px] left-[1218px] w-[62px] h-[62px] object-cover" alt="QRコード" src="/images/-20230905-009-1@2x.png" />
+
+        {/* <div className="absolute top-[703px] left-[1160px] w-[144px] h-[144px] bg-white p-2 rounded">
+          <QRCode value={nftDetailURL} fgColor="#0067c0" className="w-[62px] h-[62px] object-cover" />
+        </div> */}
+        <div className="absolute top-[703px] left-[1160px] w-[144px] h-[144px] bg-white p-2 rounded">
+          <QRCode value={nftDetailURL2} fgColor="#0067c0" className="w-[62px] h-[62px] object-cover" />
+        </div>
+
+
       </div>
     </>
   );
