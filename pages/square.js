@@ -58,7 +58,9 @@ export default function Square() {
           return item;
         })
       );
-      setNfts(items);
+      // setNfts(items);
+
+      setNfts([...items].reverse());
       setLoading(true);
     } catch (error) {
       console.error(error);
