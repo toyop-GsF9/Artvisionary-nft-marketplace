@@ -11,6 +11,7 @@
   "dependencies": {
     "@bundlr-network/client": "^0.7.8",
     "@openzeppelin/contracts": "^4.7.3",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "avsc": "git+https://github.com/Bundlr-Network/avsc.git",
     "axios": "^1.0.0",
     "bignumber.js": "^9.1.0",
