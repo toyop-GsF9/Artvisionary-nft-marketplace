@@ -69,17 +69,23 @@ export default function Home() {
         <link rel="shortcut icon" href="logo.png" />
       </Head>
 
-      <div className="bg-[#1242ef] absolute left-[-250px] top-[-210px] h-[352px] w-[652px] blur-[350px] rounded-full "></div>
+      {/* <div className="bg-[#1242ef] absolute left-[-250px] top-[-210px] h-[352px] w-[652px] blur-[350px] rounded-full "></div> */}
 
       {isWalletConnected || addr ? <Header /> : null}
 
-      <div className="relative overflow-hidden">
-        {/* HeroSection */}
-        <section className="max-w-[1240px] my-20 mx-auto grid grid-cols-2  gap-2 font-body h-[540px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
+      {/* <div className="relative overflow-hidden"> */}
+
+      <div className="relative overflow-hidden bg-black"> {/* 1. 背景を黒に変更 */}
+        {/* 2. 重ねる画像を追加 */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
+          <img src="/images/heroimage3.jpeg" alt="Back Image" width={828} height={828} />
+          <img src="/images/Treasure Art_LOGO_L.png" alt="Front Image" width={734} height={201} className="absolute top-0 left-1/2 transform -translate-x-1/2 -mt-314" />
+        </div>
+        <section className="max-w-[1240px] mt-20 mb-48 mx-auto grid grid-cols-2  gap-2 font-body h-[540px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
           <div className="flex flex-col items-start justify-center h-full sm:items-center">
-            <h1 className="w-full text-6xl sm:text-center">
+            {/* <h1 className="w-full text-6xl sm:text-center text-[#fff]">
               Treasure Art <br />
-            </h1>
+            </h1> */}
             <p className="text-[#ADB9C7] sm:text-center">
               {/* Artvisionary is the primier marketplace for NFT, which are digital items
               you can truly own. Digital items have existed for a long time, but
@@ -144,7 +150,7 @@ export default function Home() {
         <section className="max-w-[1240px] my-20 mx-auto  gap-2 font-body top-7 ">
           <h1 className="text-center w-full">Create and sell your NFTs</h1>
 
-          <div className="grid grid-cols-3 gap-5 sm:grid-cols-1 sm:p-12 md:grid-cols-1 md:mx-10">
+          <div className="top-7 grid grid-cols-3 gap-5 sm:grid-cols-1 sm:p-12 md:grid-cols-1 md:mx-10">
             {data.map((item) => (
               <div
                 key={item.id}
@@ -195,7 +201,7 @@ export default function Home() {
 
 
         {/* Community */}
-        <section className="max-w-[1240px] bg- my-20 mx-auto bg-[#52565e] gap-2 font-body top-7 text-center p-10 rounded-xl sm:mx-10 md:m-10 border border-solid border-sky-600">
+        <section className="max-w-[1240px] bg- my-20 mx-auto bg-[#52565e] gap-2 font-body top-7 text-center rounded-xl sm:mx-10 md:m-10 border border-solid border-sky-600">
           <div>
             <h1 className="text-4xl sm:text-2xl">Create Your Own NFT!</h1>
             {/* <p className="text-[#ADB9C7] px-[120px] sm:p-2 ms:p-1">
