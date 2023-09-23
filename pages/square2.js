@@ -137,7 +137,7 @@ export default function Square() {
             alt={nfts[currentSlideIndex]?.name}
             className="object-contain w-full max-h-[75vh]"
           />
-          <div className="flex justify-between px-4 py-2 absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 text-white w-full">
+          <div className="flex justify-between px-4 py-2 absolute bottom-0 left-0 right-0 bg-[#1a1a1a] bg-opacity-40 text-white w-full">
             <div className="flex items-center">
               <img className="w-9 h-9 object-cover mr-1" alt="icon" src="/images/mask-group@2x.png" />
               <span className="underline truncate">shin tanaka</span>
