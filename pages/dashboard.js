@@ -121,7 +121,7 @@ const Dashboard = () => {
     <div className="relative ">
       {" "}
       <Head>
-        <title>Dashboard || Artvisionary</title>
+        <title>Dashboard || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
       <Header />

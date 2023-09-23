@@ -58,7 +58,7 @@ const Header = () => {
         >
           <h2 className="text-2xl sm:text-3xl text-white">
             <Link href="/">
-              <a>Artvisionary</a>
+              <a>Treasure Art</a>
             </Link>
           </h2>
           <ul className="flex gap-3 items-center justify-center transition-all list-none sm:hidden">
@@ -157,7 +157,7 @@ const Header = () => {
 
           <h2 className="text-2xl ">
             <Link href="/">
-              <a>Artvisionary</a>
+              <a>Treasure Art</a>
             </Link>
           </h2>
           <ul className="grid gap-3 grid-rows-3 items-center justify-center transition-all list-none nav_links text-lg">

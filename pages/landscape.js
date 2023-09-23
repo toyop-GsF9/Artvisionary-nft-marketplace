@@ -120,7 +120,7 @@ export default function Landscape() {
   return (
     <>
       <Head>
-        <title>Playlist（landscape） || Artvisionary</title>
+        <title>Playlist（landscape） || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
       <div className="relative w-full h-[930px] overflow-hidden text-left text-sm text-gray-600 bg-white">

@@ -74,7 +74,7 @@ const Profile = () => {
   return (
     <div className="relative  ">
       <Head>
-        <title> My Profile || Artvisionary </title>
+        <title> My Profile || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
       <Header />

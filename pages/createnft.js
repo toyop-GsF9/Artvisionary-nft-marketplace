@@ -163,13 +163,13 @@ const Create = () => {
   return (
     <div className="font-body">
       <Head>
-        <title>Create NFT || Artvisionary </title>
+        <title>Create NFT || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
 
       <Header />
 
-      <h1 className="text-center">Artvisionary Create NFT</h1>
+      <h1 className="text-center">Treasure Art Create NFT</h1>
 
       <div className="relative overflow-hidden">
         <section className="max-w-[1024px] my-20 mx-auto grid grid-cols-2  gap-10 font-body  overflow-hidden top-7 md:gap-10 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">

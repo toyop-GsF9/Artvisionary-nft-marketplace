@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="col-span-1">
             <div className="flex items-center justify-start gap-1">
               <img src="logo.png" alt="logo" className="w-[40px] h-[40px]" />
-              <h4 className="">Artvisionary</h4>
+              <h4 className="">Treasure Art</h4>
             </div>
             <p className="text-lg text-[#ADB9C7]">
               The world’s first and largest digital marketplace for crypto

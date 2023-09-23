@@ -73,7 +73,7 @@ export default function Sampleplay() {
 	return (
 		<>
 			<Head>
-				<title>Playlist（sample） || Artvisionary</title>
+				<title>Playlist（sample） || Treasure Art</title>
 				<link rel="shortcut icon" href="logo.png" />
 			</Head>
 

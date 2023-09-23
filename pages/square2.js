@@ -125,7 +125,7 @@ export default function Square() {
   return (
     <>
       <Head>
-        <title>Playlist（square） || Artvisionary</title>
+        <title>Playlist（square） || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
       <div className="relative w-full max-w-[1440px] max-h-[930px] flex items-center justify-center text-left text-sm text-gray-600 bg-white">

@@ -120,7 +120,7 @@ export default function Vertical() {
   return (
     <>
       <Head>
-        <title>Playlist（vertical） || Artvisionary</title>
+        <title>Playlist（vertical） || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
       <div className="relative w-full h-[930px] overflow-hidden text-left text-sm text-gray-600 bg-white">

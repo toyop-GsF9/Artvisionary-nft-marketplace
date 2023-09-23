@@ -40,7 +40,7 @@ export default function ProfileArtist() {
 			<Head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="initial-scale=1, width=device-width" />
-				<title>ArtVisionary</title>
+				<title>Treasure Art</title>
 			</Head>
 
 			<div className="flex flex-row md:flex-col justify-center items-center h-[362px] mx-4 mt-8 md:mt-32">
