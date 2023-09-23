@@ -63,7 +63,7 @@ export default function Home() {
   };
 
   return (
-    <div className="">
+    <div className="bg-black top-0">
       <Head>
         <title>Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
@@ -77,20 +77,16 @@ export default function Home() {
 
       <div className="relative overflow-hidden bg-black"> {/* 1. 背景を黒に変更 */}
         {/* 2. 重ねる画像を追加 */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
+        <div className="absolute mt-2 left-1/2 transform -translate-x-1/2">
           <img src="/images/heroimage3.jpeg" alt="Back Image" width={828} height={828} />
           <img src="/images/Treasure Art_LOGO_L.png" alt="Front Image" width={734} height={201} className="absolute top-0 left-1/2 transform -translate-x-1/2 -mt-314" />
         </div>
-        <section className="max-w-[1240px] mt-20 mb-48 mx-auto grid grid-cols-2  gap-2 font-body h-[540px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
-          <div className="flex flex-col items-start justify-center h-full sm:items-center">
-            {/* <h1 className="w-full text-6xl sm:text-center text-[#fff]">
+        <section className="max-w-[1240px] my-20 mx-auto grid grid-cols-2  gap-2 font-body h-[540px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
+          <div className="flex flex-col items-start justify-center h-full sm:items-center z-10"> {/* z-10を追加してボタンを画像の上に表示 */}
+            {/* <h1 className="w-full text-6xl sm:text-center">
               Treasure Art <br />
             </h1> */}
-            <p className="text-[#ADB9C7] sm:text-center">
-              {/* Artvisionary is the primier marketplace for NFT, which are digital items
-              you can truly own. Digital items have existed for a long time, but
-              never like this. */}
-            </p>
+            <p className="text-[#ADB9C7] sm:text-center"></p>
             {addr ? (
               <button
                 type="button"
