@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { truncateEthAddress } from "../utils/truncAddress";
+import Image from 'next/image';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,9 +57,16 @@ const Header = () => {
               : ` font-body flex items-center justify-between max-w-[1440px] mb-2 mx-auto h-16 md:px-4 md:mx-5 bg-black sm:px-1 ssm:p-1 transition duration-250 ease-in-out`
           }
         >
-          <h2 className="text-2xl sm:text-3xl text-white">
+          {/* <h2 className="text-2xl sm:text-3xl text-white ml-3">
             <Link href="/">
               <a>Treasure Art</a>
+            </Link>
+          </h2> */}
+          <h2 className="mx-2 mb-2">
+            <Link href="/">
+              <a>
+                <Image src="/images/Treasure Art_LOGO_M.png" alt="Treasure Art Logo" width={130} height={45} />
+              </a>
             </Link>
           </h2>
           <ul className="flex gap-3 items-center justify-center transition-all list-none sm:hidden">
