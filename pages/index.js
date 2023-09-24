@@ -75,13 +75,9 @@ export default function Home() {
 
       {/* <div className="relative overflow-hidden"> */}
 
-      <div className="relative overflow-hidden bg-black"> {/* 1. 背景を黒に変更 */}
-        {/* 2. 重ねる画像を追加 */}
-        <div className="absolute mt-2 left-1/3 transform -translate-x-1/2">
-          <img src="/images/heroimage3.jpeg" alt="Back Image" width={630} height={630} />
-          <img src="/images/Treasure Art_LOGO_L.png" alt="Front Image" width={550} height={150} className="absolute top-0 left-1/2 transform -translate-x-1/2 -mt-314" />
-        </div>
-        <section className="max-w-[1240px] mt-40 mb-20 mx-auto grid grid-cols-2  gap-2 font-body h-[540px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
+      <div className="relative overflow-hidden bg-black">
+
+        <section className="max-w-[1240px] mt-30 mb-20 mx-auto grid grid-cols-2  gap-2 font-body h-[540px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
           <div className="flex flex-col items-center justify-center h-full sm:items-center z-10"> {/* z-10を追加してボタンを画像の上に表示 */}
             {/* <h1 className="w-full text-6xl sm:text-center">
               Treasure Art <br />
