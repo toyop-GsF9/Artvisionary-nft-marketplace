@@ -43,3 +43,5 @@ typechain-types
 cache
 artifacts
 
+backend/config.env
+backend/node_modules
