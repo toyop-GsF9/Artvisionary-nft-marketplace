@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const globalErrorHandler = require("./controllers/errorController");
 const AppError = require("./utils/appError");
 const userRouter = require("./routes/userRoutes");
+const cors = require("cors");
 
 const app = express();
 
@@ -11,6 +12,7 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev")); 
 }
 
+app.use(cors());
 app.use(express.static(`${__dirname}/public`));
 
 app.use("/api/v1/users", userRouter); 
