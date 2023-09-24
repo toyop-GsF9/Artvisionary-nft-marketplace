@@ -22,11 +22,11 @@ const upload = multer({
   fileFilter: multerFilter,
 });
 
-exports.uploadUserPhoto = upload.single("photo"); // 画像をアップロードするときは、upload.single('photo')を追加する'photo'はフロント側で指定した名前 これでreq.fileに画像の情報が入る
+exports.uploadUserPhoto = upload.single("profile_image"); // 画像をアップロードするときは、upload.single('photo')を追加する'photo'はフロント側で指定した名前 これでreq.fileに画像の情報が入る
 
 exports.resizeUserPhoto = (req, res, next) => {
   if (!req.file) return next(); // 画像がない場合は次のミドルウェアに移動する
-  req.file.filename = `user-${req.id}-${Date.now()}.jpeg`; // 画像の名前を決める
+  req.file.filename = `user-${req.name}-${Date.now()}.jpeg`; // 画像の名前を決める
   sharp(req.file.buffer)
     .resize(500, 500)
     .toFormat("jpeg")
@@ -35,11 +35,20 @@ exports.resizeUserPhoto = (req, res, next) => {
   next();
 };
 
+const filterObj = (obj, ...allowedFields) => {
+  const newObj = {};
+  Object.keys(obj).forEach((el) => {
+    if (allowedFields.includes(el)) newObj[el] = obj[el];
+  });
+  return newObj;
+};
+
 exports.register = catchAsync(async (req, res, next) => {
 
-  if (req.file && req.file.filename) {
-    req.body.profile_image = `/img/users/${req.file.filename}`;
-  }
+  const filteredBody = filterObj(req.body);
+  if (req.file && req.file.filename) filteredBody.profile_image = req.file.filename;
+ 
+  req.body = { ...req.body, ...filteredBody };
 
   await createOneUser(req, res, next);
 });
