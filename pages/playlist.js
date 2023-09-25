@@ -90,7 +90,7 @@ const Dashboard = () => {
       if (isModalOpen) {
         nextSlide();
       }
-    }, 3000);
+    }, 5000);
 
     // クリーンアップ関数: タイマーを解除する
     return () => clearInterval(timer);

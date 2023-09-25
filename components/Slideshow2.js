@@ -22,7 +22,7 @@ const Slideshow2 = ({ playlists, defaultPlaylist = 'ColorfulAnimal', width, heig
 	useEffect(() => {
 		const intervalId = setInterval(() => {
 			nextSlide();
-		}, 3000);
+		}, 5000);
 
 		return () => {
 			clearInterval(intervalId);
