@@ -112,7 +112,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/sample-playlist">
+              <Link href="/square2">
                 <a
                   className={
                     currentRoute === "/profile"
