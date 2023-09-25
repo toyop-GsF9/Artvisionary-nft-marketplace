@@ -146,7 +146,7 @@ export default function Home() {
         </section>
 
         <section className="max-w-[1240px] my-20 mx-auto  gap-2 font-body top-7 ">
-          <h1 className="text-center w-full">Create and sell your NFTs</h1>
+          <h1 className="text-center w-full text-[#fff]">Create and sell your NFTs</h1>
 
           <div className="top-7 grid grid-cols-3 gap-5 sm:grid-cols-1 sm:p-12 md:grid-cols-1 md:mx-10">
             {data.map((item) => (
