@@ -173,7 +173,7 @@ export default function Home() {
         </section>
 
         <section className="max-w-[1240px] my-20 mx-auto  gap-2 font-body top-7 ">
-          <h1 className="text-center w-full">Playlist</h1>
+          <h1 className="text-center w-full text-[#fff]">Playlist</h1>
           {/* <div className="grid grid-cols-4 gap-3 sm:gap-y-8 md:grid-cols-2 sm:grid-cols-1 sm:p-12 md:mx-10">
             {mockartist.map((data) => (
               <div
