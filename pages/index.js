@@ -5,6 +5,7 @@ import mockartist from "../constants/mock-artist.json";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Footer, Header, Slideshow2 } from "../components";
+import Link from 'next/link';
 
 export default function Home() {
   const [isWalletConnected, setIsWalletConnected] = useState(false);
@@ -110,30 +111,6 @@ export default function Home() {
               )}
             </div>
 
-
-
-
-
-
-
-            {/* {addr ? (
-              <button
-                type="button"
-                className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer transition duration-250 ease-in-out hover:scale-125 hover:drop-shadow-xl hover:shadow-sky-600 w-auto focus:scale-90 z-20"
-                onClick={connectWallet}
-              >
-                Create an NFT
-              </button>
-            ) : (
-              <button
-                type="button"
-                className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer  duration-250 ease-in-out hover:transform-x-1 hover:drop-shadow-xl hover:shadow-sky-600 w-full mt-8 transition transform hover:-translate-y-3 motion-reduce:transition-none motion-reduce:hover:transform-none z-20"
-                onClick={connectWallet}
-              >
-                Connect Wallet
-              </button>
-            )} */}
-
           </div>
 
 
@@ -197,7 +174,7 @@ export default function Home() {
 
         <section className="max-w-[1240px] my-20 mx-auto  gap-2 font-body top-7 ">
           <h1 className="text-center w-full">Playlist</h1>
-          <div className="grid grid-cols-4 gap-3 sm:gap-y-8 md:grid-cols-2 sm:grid-cols-1 sm:p-12 md:mx-10">
+          {/* <div className="grid grid-cols-4 gap-3 sm:gap-y-8 md:grid-cols-2 sm:grid-cols-1 sm:p-12 md:mx-10">
             {mockartist.map((data) => (
               <div
                 key={data.id}
@@ -208,13 +185,32 @@ export default function Home() {
                     src={data.bgImage}
                     alt={data.name}
                     layout="responsive"
-                    className="absolute w-full h-full rounded-2xl object-fit: contain" // ここでobject-fit: containとh-fullを追加
+                    className="absolute w-full h-full rounded-2xl object-fit: contain" 
                   />
                 </div>
                 <div className="w-full text-center mt-8 font-bold">
                   <h3>{data.name}</h3>
                 </div>
               </div>
+            ))}
+          </div> */}
+          <div className="grid grid-cols-4 gap-3 sm:gap-y-8 md:grid-cols-2 sm:grid-cols-1 sm:p-12 md:mx-10">
+            {mockartist.map((data) => (
+              <Link href={`/${data.name}`} key={data.id}>
+                <a className="w-full bg-[#52565e] flex flex-col justify-center items-center p-3 rounded-xl">
+                  <div className="w-full relative" style={{ paddingBottom: '100%' }}>
+                    <img
+                      src={data.bgImage}
+                      alt={data.name}
+                      layout="responsive"
+                      className="absolute w-full h-full rounded-2xl object-fit: contain"
+                    />
+                  </div>
+                  <div className="w-full text-center mt-8 font-bold">
+                    <h3>{data.name}</h3>
+                  </div>
+                </a>
+              </Link>
             ))}
           </div>
         </section>
