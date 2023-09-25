@@ -144,8 +144,8 @@ export default function Square() {
             </div>
             {/* <div className="font-semibold truncate">Point</div> */}
             <div className="flex items-center">
-              <img className="w-9 h-9 rounded-[9px]" alt="ETH" src="/images/ethereum-1@2x.png" />
-              <span className="ml-2 font-semibold leading-[36px]">0.01 ETH</span>
+              <img className="w-9 h-9 rounded-[9px]" alt="MATIC" src="/images/ethereum-1@2x.png" />
+              <span className="ml-2 font-semibold leading-[36px]">0.01 MATIC</span>
             </div>
           </div>
         </div>
