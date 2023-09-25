@@ -80,7 +80,7 @@ export default function Home() {
 
         <section className="max-w-[1240px] mt-30 mb-20 mx-auto grid grid-cols-2  gap-2 font-body h-[540px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
 
-          <div className="relative flex flex-col items-center justify-center h-full min-h-[45vh] sm:items-center">
+          <div className="relative flex flex-col items-center justify-center h-full min-h-[56vh] sm:items-center">
             {/* 奥の正方形の画像 */}
             <div className="absolute top-0 left-0 w-full h-[0px] pb-full"> {/* pb-fullを使用してアスペクト比を1:1に保つ */}
               <img src="/images/heroimage3.jpeg" className="absolute top-0 left-0 w-full  object-cover" alt="Background Image" />
