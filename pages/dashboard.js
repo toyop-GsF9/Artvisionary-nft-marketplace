@@ -1,17 +1,18 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
-import { Footer, Header, CheckWalletConnection } from "../components";
+import { Footer, Header } from "../components";
 import ContractABI from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { ethers } from "ethers";
 import { truncateEthAddress } from "../utils/truncAddress";
 import { useRouter } from "next/router";
+import { useCheckWalletConnection } from "../hooks/useCheckWalletConnection";
 
 const mainURL = `https://arweave.net/`;
 
 const Dashboard = () => {
-  CheckWalletConnection();
+  useCheckWalletConnection();
   const [nfts, setNts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -67,32 +68,32 @@ const Dashboard = () => {
     getNfts();
   }, []);
 
-  useEffect(() => {
-    // 3秒ごとにnextSlide関数を実行するタイマーを設定
-    const timer = setInterval(() => {
-      if (isModalOpen) {
-        nextSlide();
-      }
-    }, 3000);
+  // useEffect(() => {
+  //   // 3秒ごとにnextSlide関数を実行するタイマーを設定
+  //   const timer = setInterval(() => {
+  //     if (isModalOpen) {
+  //       nextSlide();
+  //     }
+  //   }, 3000);
 
-    //   useEffect(() => {
-    //     let timer;
+  //   useEffect(() => {
+  //     let timer;
 
-    //     if (!loading) {
-    //       // loadingがfalseの場合、10秒後に実行されるタイマーをセット
-    //       timer = setTimeout(() => {
+  //     if (!loading) {
+  //       // loadingがfalseの場合、10秒後に実行されるタイマーをセット
+  //       timer = setTimeout(() => {
 
-    //         // ホームページへのリダイレクト
-    //         router.push('/');
+  //         // ホームページへのリダイレクト
+  //         router.push('/');
 
-    //       }, 10000); // 10秒後
-    //     } // コンポーネントがアンマウントされたとき、またはloadingが変わったときにタイマーをクリア
-    //     return () => clearTimeout(timer);
-    //   }, [loading]);
+  //       }, 10000); // 10秒後
+  //     } // コンポーネントがアンマウントされたとき、またはloadingが変わったときにタイマーをクリア
+  //     return () => clearTimeout(timer);
+  //   }, [loading]);
 
-    // クリーンアップ関数: タイマーを解除する
-    return () => clearInterval(timer);
-  }, [isModalOpen, currentSlideIndex]);
+  //   // クリーンアップ関数: タイマーを解除する
+  //   return () => clearInterval(timer);
+  // }, [isModalOpen, currentSlideIndex]);
 
 
 
