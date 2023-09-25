@@ -174,26 +174,7 @@ export default function Home() {
 
         <section className="max-w-[1240px] my-20 mx-auto  gap-2 font-body top-7 ">
           <h1 className="text-center w-full text-[#fff]">Playlist</h1>
-          {/* <div className="grid grid-cols-4 gap-3 sm:gap-y-8 md:grid-cols-2 sm:grid-cols-1 sm:p-12 md:mx-10">
-            {mockartist.map((data) => (
-              <div
-                key={data.id}
-                className="w-full bg-[#52565e] flex flex-col justify-center items-center p-3 rounded-xl"
-              >
-                <div className="w-full relative" style={{ paddingBottom: '100%' }}>
-                  <img
-                    src={data.bgImage}
-                    alt={data.name}
-                    layout="responsive"
-                    className="absolute w-full h-full rounded-2xl object-fit: contain" 
-                  />
-                </div>
-                <div className="w-full text-center mt-8 font-bold">
-                  <h3>{data.name}</h3>
-                </div>
-              </div>
-            ))}
-          </div> */}
+
           <div className="grid grid-cols-4 gap-3 sm:gap-y-8 md:grid-cols-2 sm:grid-cols-1 sm:p-12 md:mx-10">
             {mockartist.map((data) => (
               <Link href={`/${data.name}`} key={data.id}>
