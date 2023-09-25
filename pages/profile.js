@@ -94,7 +94,7 @@ const Profile = () => {
               <img
                 src="logo.png"
                 alt="Logo"
-                className="w-[80px] h-[80px] sm:h-[60px] sm:w-[60px]"
+                className="w-[80px] h-[80px] sm:h-[40px] sm:w-[60px]"
               />
             </div>
           </div>

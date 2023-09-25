@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid footer justify-between gap-[88px] md:grid-cols-2 md:gap-6 ">
           <div className="col-span-1">
             <div className="flex items-center justify-start gap-1">
-              <img src="logo.png" alt="logo" className="w-[40px] h-[40px]" />
+              <img src="logo.png" alt="logo" className="w-[60px] h-[40px]" />
               <h4 className="">Treasure Art</h4>
             </div>
             <p className="text-lg text-[#ADB9C7]">
