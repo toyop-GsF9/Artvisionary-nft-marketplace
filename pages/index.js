@@ -78,15 +78,48 @@ export default function Home() {
       <div className="relative overflow-hidden bg-black">
 
         <section className="max-w-[1240px] mt-30 mb-20 mx-auto grid grid-cols-2  gap-2 font-body h-[540px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
-          <div className="flex flex-col items-center justify-center h-full sm:items-center z-10"> {/* z-10を追加してボタンを画像の上に表示 */}
-            {/* <h1 className="w-full text-6xl sm:text-center">
-              Treasure Art <br />
-            </h1> */}
-            <p className="text-[#ADB9C7] sm:text-center"></p>
-            {addr ? (
+
+          <div className="relative flex flex-col items-center justify-center h-full min-h-[45vh] sm:items-center">
+            {/* 奥の正方形の画像 */}
+            <div className="absolute top-0 left-0 w-full h-[0px] pb-full"> {/* pb-fullを使用してアスペクト比を1:1に保つ */}
+              <img src="/images/heroimage3.jpeg" className="absolute top-0 left-0 w-full  object-cover" alt="Background Image" />
+            </div>
+
+
+            <div className="absolute top-1/4 left-0 w-full h-1/4 transform -translate-y-1/2">
+              <img src="/images/Treasure Art_LOGO_L.png" className="w-full  object-cover" alt="Foreground Image" />
+            </div>
+
+            <div className="absolute top-[calc(50%+12.5%)] left-0 w-full">
+              {addr ? (
+                <button
+                  type="button"
+                  className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer transition duration-250 ease-in-out hover:scale-125 hover:drop-shadow-xl hover:shadow-sky-600 w-auto focus:scale-90 z-20"
+                  onClick={connectWallet}
+                >
+                  Create an NFT
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer duration-250 ease-in-out hover:transform-x-1 hover:drop-shadow-xl hover:shadow-sky-600 w-full transition transform hover:-translate-y-3 motion-reduce:transition-none motion-reduce:hover:transform-none z-20"
+                  onClick={connectWallet}
+                >
+                  Connect Wallet
+                </button>
+              )}
+            </div>
+
+
+
+
+
+
+
+            {/* {addr ? (
               <button
                 type="button"
-                className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer transition duration-250 ease-in-out hover:scale-125 hover:drop-shadow-xl hover:shadow-sky-600 w-auto focus:scale-90"
+                className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer transition duration-250 ease-in-out hover:scale-125 hover:drop-shadow-xl hover:shadow-sky-600 w-auto focus:scale-90 z-20"
                 onClick={connectWallet}
               >
                 Create an NFT
@@ -94,25 +127,21 @@ export default function Home() {
             ) : (
               <button
                 type="button"
-                className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer  duration-250 ease-in-out hover:transform-x-1 hover:drop-shadow-xl hover:shadow-sky-600 w-full mt-8 transition transform hover:-translate-y-3 motion-reduce:transition-none motion-reduce:hover:transform-none "
+                className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer  duration-250 ease-in-out hover:transform-x-1 hover:drop-shadow-xl hover:shadow-sky-600 w-full mt-8 transition transform hover:-translate-y-3 motion-reduce:transition-none motion-reduce:hover:transform-none z-20"
                 onClick={connectWallet}
               >
                 Connect Wallet
               </button>
-            )}
+            )} */}
+
           </div>
 
 
-          <div className="w-full flex items-center justify-center">
+
+
+          <div className="w-full flex  justify-center">
             <div className="w-[400px] h-[536px] bg-[#272D37]/60 rounded-2xl flex flex-col p-6 sm:h-max">
               <Slideshow2 playlists={playlists} width="352" height="352" />
-              {/* <Image
-                src="/images/X-ray6.jpeg"
-                alt="mock"
-                height={352}
-                width={352}
-                layout="intrinsic"
-              ></Image> */}
               <div className="">
                 <h1>example</h1>
                 <div className="h-[56px] flex justify-between">
