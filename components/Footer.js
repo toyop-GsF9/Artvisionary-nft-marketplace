@@ -7,8 +7,8 @@ const Footer = () => {
         <div className="grid footer justify-between gap-[88px] md:grid-cols-2 md:gap-6 ">
           <div className="col-span-1">
             <div className="flex items-center justify-start gap-1">
-              <img src="logo.png" alt="logo" className="w-[60px] h-[40px]" />
-              <h4 className="">Treasure Art</h4>
+              <img src="logo.png" alt="logo" className="w-[90px] h-[45px]" />
+              {/* <h4 className="">Treasure Art</h4> */}
             </div>
             <p className="text-lg text-[#ADB9C7]">
               The world’s first and largest digital marketplace for crypto
@@ -17,7 +17,7 @@ const Footer = () => {
             </p>
           </div>
           <div>
-            <h3 className="title">Resources</h3>
+            <h3 className="title text-[#090909]">Resources</h3>
             <p className="desc">Help Center</p>
             <p className="desc">Platform Status</p>
             <p className="desc">Partners</p>
