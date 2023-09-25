@@ -38,7 +38,7 @@ export default function Sampleplay() {
 	const router = useRouter();
 
 	const handleGoBack = () => {
-		router.push('/playlist');
+		router.push('/');
 	};
 
 
