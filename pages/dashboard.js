@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
-import { Footer, Header } from "../components";
+import { Footer, Header, CheckWalletConnection } from "../components";
 import ContractABI from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
 import { toast } from "react-toastify";
 import axios from "axios";
@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 const mainURL = `https://arweave.net/`;
 
 const Dashboard = () => {
+  CheckWalletConnection();
   const [nfts, setNts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
