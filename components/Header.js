@@ -112,10 +112,10 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/square2">
+              <Link href="/square">
                 <a
                   className={
-                    currentRoute === "/profile"
+                    currentRoute === "/square"
                       ? "text-white text-base font-medium"
                       : "text-gray-500 font-normal hover:text-white"
                   }
