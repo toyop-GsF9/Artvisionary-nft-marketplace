@@ -6,7 +6,6 @@ import axios from "axios";
 import { ethers } from "ethers";
 // import { truncateEthAddress } from "../utils/truncAddress";
 import { useRouter } from "next/router";
-// import QRCode from 'qrcode.react';
 import { QRCodeComponent } from "../components";
 
 
@@ -115,9 +114,6 @@ export default function Square() {
     setCurrentSlideIndex((prevIndex) => (prevIndex - 1 + nfts.length) % nfts.length);
   };
 
-  const changeAspectRatio = (ratio) => {
-    setAspectRatio(ratio);
-  };
   // NFTの詳細ページへのURLを取得
   const nftDetailURL = `https://artvisionary02.vercel.app/nft-details?price=${nfts[currentSlideIndex]?.price}&tokenId=${nfts[currentSlideIndex]?.tokenId}&seller=${nfts[currentSlideIndex]?.seller}&owner=${nfts[currentSlideIndex]?.owner}&image=${encodeURIComponent(nfts[currentSlideIndex]?.image)}&name=${encodeURIComponent(nfts[currentSlideIndex]?.name)}&description=${encodeURIComponent(nfts[currentSlideIndex]?.description)}&tokenURI=${encodeURIComponent(nfts[currentSlideIndex]?.tokenURI)}`;
   const nftDetailURL2 = `https://artvisionary02.vercel.app/dashboard`;
@@ -129,44 +125,43 @@ export default function Square() {
         <title>Playlist（square） || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
-
-      <div className="w-full max-w-[1440px] max-h-[930px] flex items-center justify-center text-left text-sm text-gray-600 bg-black">
-        <div className="bg-black absolute top-0 left-0 w-full h-full"></div>
-        <div className="w-11/12 max-w-[792px] bg-[#1a1a1a] border-4 border-gray-300 box-border pb-full">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <img
-              src={mainURL + nfts[currentSlideIndex]?.image}
-              alt={nfts[currentSlideIndex]?.name}
-              className="object-contain max-h-full max-w-full"
-            />
-
-            <div className="flex justify-between px-4 py-2 absolute bottom-0 left-0 right-0 bg-[#1a1a1a] bg-opacity-40 text-white w-full">
-              <div className="flex items-center">
-                <img className="w-9 h-9 object-cover mr-1" alt="icon" src="/images/mask-group@2x.png" />
-                <span className="underline truncate">shin tanaka</span>
-              </div>
-              {/* <div className="font-semibold truncate">Point</div> */}
-              <div className="flex items-center">
-                <img className="w-9 h-9 rounded-[9px]" alt="MATIC" src="/images/ethereum-1@2x.png" />
-                <span className="ml-2 font-semibold leading-[36px]">0.01 MATIC</span>
-              </div>
+      <div className="w-full h-[930px] max-w-[1440px] flex items-center justify-center bg-black relative">
+        <div className="w-[852px] h-[852px] bg-[#1a1a1a] flex items-center justify-center relative ">
+          <img
+            src={mainURL + nfts[currentSlideIndex]?.image}
+            alt={nfts[currentSlideIndex]?.name}
+            className="object-contain h-[676px] w-[676px] mt-[-40px]"
+          />
+          <div className="flex justify-between px-4 py-2 absolute bottom-2 left-0 right-0 text-[#a3a3a3] w-full">
+            <div className="flex items-center">
+              <img
+                className="w-9 h-9 object-cover mr-1"
+                alt="icon"
+                src="/images/mask-group@2x.png"
+              />
+              <span className="underline truncate ml-2">shin tanaka</span>
+              <span className="truncate ml-6">title</span>
+            </div>
+            <div className="flex items-center pr-24">
+              {" "}
+              <img
+                className="w-6 h-9 rounded-[9px]"
+                alt="MATIC"
+                src="/images/ethereum-1@2x.png"
+              />
+              <span className="ml-2 font-semibold leading-[32px]">
+                0.01 MATIC
+              </span>
             </div>
           </div>
-        </div>
-        {/* <div className="absolute right-0 bottom-14 mb-53px] bg-black">
-          <div className="w-[136px]  h-[136px]  bg-white  rounded p-1 z-10">
-            <QRCode value={nftDetailURL} fgColor="#0067c0" className="w-[36px]  h-[36px]  " />
+          <div className="absolute bottom-0 right-0 mr-4 mb-4">
+            <QRCodeComponent
+              value={nftDetailURL}
+              className="w-[81px] h-[81px]"
+            />
           </div>
-        </div> */}
-        <div className="absolute bottom-0 ">
-          <QRCodeComponent value={nftDetailURL} />
-
         </div>
       </div>
-
-
     </>
   );
-
-
 }
