@@ -126,17 +126,10 @@ const Header = () => {
             </li>
           </ul>
 
-          {/* <button onClick={disconnectWallet}>
-            Disconnect Wallet
-          </button>
-          <p className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-800 sm:hidden">
-            {truncateEthAddress(addr)}
-          </p> */}
-
           <div className="flex items-center justify-end space-x-4">
-            <button onClick={disconnectWallet} className="text-xs sm:text-sm bg-blue-600 px-1 sm:px-2 py-0.5 sm:py-1 rounded hover:bg-blue-700">
+            {/* <button onClick={disconnectWallet} className="text-xs sm:text-sm bg-blue-600 px-1 sm:px-2 py-0.5 sm:py-1 rounded hover:bg-blue-700">
               Disconnect Wallet
-            </button>
+            </button> */}
             <p className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-800 sm:hidden">
               {truncateEthAddress(addr)}
             </p>
