@@ -152,7 +152,7 @@ export default function Square() {
             </div>
           </div>
         </div>
-        <div className="absolute right-0 bottom-0 mb-53px] bg-black">
+        <div className="absolute right-0 bottom-14 mb-53px] bg-black">
           <div className="w-[136px]  h-[136px]  bg-white  rounded p-1 z-10">
             <QRCode value={nftDetailURL} fgColor="#0067c0" className="w-[36px]  h-[36px]  " />
           </div>
