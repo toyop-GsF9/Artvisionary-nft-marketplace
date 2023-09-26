@@ -114,9 +114,6 @@ export default function Square() {
     setCurrentSlideIndex((prevIndex) => (prevIndex - 1 + nfts.length) % nfts.length);
   };
 
-  const changeAspectRatio = (ratio) => {
-    setAspectRatio(ratio);
-  };
   // NFTの詳細ページへのURLを取得
   const nftDetailURL = `https://artvisionary02.vercel.app/nft-details?price=${nfts[currentSlideIndex]?.price}&tokenId=${nfts[currentSlideIndex]?.tokenId}&seller=${nfts[currentSlideIndex]?.seller}&owner=${nfts[currentSlideIndex]?.owner}&image=${encodeURIComponent(nfts[currentSlideIndex]?.image)}&name=${encodeURIComponent(nfts[currentSlideIndex]?.name)}&description=${encodeURIComponent(nfts[currentSlideIndex]?.description)}&tokenURI=${encodeURIComponent(nfts[currentSlideIndex]?.tokenURI)}`;
   const nftDetailURL2 = `https://artvisionary02.vercel.app/dashboard`;
