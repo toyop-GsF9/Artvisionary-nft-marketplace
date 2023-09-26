@@ -152,22 +152,14 @@ export default function Square() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 mb-[-136px] bg-black">
+        <div className="absolute right-0 bottom-0 mb-53px] bg-black">
           <div className="w-[136px]  h-[136px]  bg-white  rounded p-1 z-10">
             <QRCode value={nftDetailURL} fgColor="#0067c0" className="w-[36px]  h-[36px]  " />
           </div>
         </div>
       </div>
 
-      <style jsx>{`
-       .aspect-w-1 {
-            padding-bottom: 100%; /* 1:1 アスペクト比 */
-            position: relative;
-          }
-        @media (max-width: 640px) {
-          // Mobile styles here
-          }
-        `}</style>
+
     </>
   );
 
