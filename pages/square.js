@@ -6,7 +6,8 @@ import axios from "axios";
 import { ethers } from "ethers";
 // import { truncateEthAddress } from "../utils/truncAddress";
 import { useRouter } from "next/router";
-import QRCode from 'qrcode.react';
+// import QRCode from 'qrcode.react';
+import { QRCodeComponent } from "../components";
 
 
 const mainURL = `https://arweave.net/`;
@@ -152,10 +153,14 @@ export default function Square() {
             </div>
           </div>
         </div>
-        <div className="absolute right-0 bottom-14 mb-53px] bg-black">
+        {/* <div className="absolute right-0 bottom-14 mb-53px] bg-black">
           <div className="w-[136px]  h-[136px]  bg-white  rounded p-1 z-10">
             <QRCode value={nftDetailURL} fgColor="#0067c0" className="w-[36px]  h-[36px]  " />
           </div>
+        </div> */}
+        <div className="absolute bottom-0 ">
+          <QRCodeComponent value={nftDetailURL} />
+
         </div>
       </div>
 
