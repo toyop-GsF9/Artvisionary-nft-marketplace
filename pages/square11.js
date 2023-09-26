@@ -128,7 +128,8 @@ export default function Square() {
         <title>Playlist（square） || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
-      <div className="relative w-full max-w-[1440px] max-h-[930px] flex items-center justify-center text-left text-sm text-gray-600 bg-white">
+      {/* <div className="relative w-full max-w-[1440px] max-h-[930px] flex items-center justify-center text-left text-sm text-gray-600 bg-white"> */}
+      <div className="relative w-screen h-screen flex items-center justify-center text-left text-sm text-gray-600 bg-white overflow-hidden">
         <div className="bg-black absolute top-0 left-0 w-full h-full"></div>
 
         <div className="relative bg-[#1a1a1a] flex items-center justify-center border-4 border-gray-300 box-border w-11/12 max-w-[792px] p-[66px]">
