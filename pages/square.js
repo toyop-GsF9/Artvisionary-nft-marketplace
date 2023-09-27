@@ -118,7 +118,7 @@ export default function Square() {
   const nftDetailURL = `https://artvisionary02.vercel.app/nft-details?price=${nfts[currentSlideIndex]?.price}&tokenId=${nfts[currentSlideIndex]?.tokenId}&seller=${nfts[currentSlideIndex]?.seller}&owner=${nfts[currentSlideIndex]?.owner}&image=${encodeURIComponent(nfts[currentSlideIndex]?.image)}&name=${encodeURIComponent(nfts[currentSlideIndex]?.name)}&description=${encodeURIComponent(nfts[currentSlideIndex]?.description)}&tokenURI=${encodeURIComponent(nfts[currentSlideIndex]?.tokenURI)}`;
   const nftDetailURL2 = `https://artvisionary02.vercel.app/dashboard`;
 
-
+  const truncateSeller = (seller) => seller.slice(-4);
   return (
     <>
       <Head>
@@ -139,8 +139,11 @@ export default function Square() {
                 alt="icon"
                 src="/images/mask-group@2x.png"
               />
-              <span className="underline truncate ml-2">shin tanaka</span>
-              <span className="truncate ml-6">title</span>
+              {/* <span className="underline truncate ml-2">shin tanaka</span>
+              <span className="truncate ml-6">title</span> */}
+              <span className="underline truncate ml-2">{truncateSeller(nfts[currentSlideIndex]?.seller)}</span>
+              <span className="truncate ml-6">{nfts[currentSlideIndex]?.name}</span>
+
             </div>
             <div className="flex items-center pr-24">
               {" "}
@@ -149,8 +152,11 @@ export default function Square() {
                 alt="MATIC"
                 src="/images/polygonlogo-mono.png"
               />
-              <span className="ml-2 font-semibold leading-[32px]">
+              {/* <span className="ml-2 font-semibold leading-[32px]">
                 0.01 MATIC
+              </span> */}
+              <span className="ml-2 font-semibold leading-[32px]">
+                {nfts[currentSlideIndex]?.price} MATIC
               </span>
             </div>
           </div>
