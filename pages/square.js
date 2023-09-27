@@ -96,7 +96,7 @@ export default function Square() {
 
   if (!loading)
     return (
-      <div className="w-full h-screen flex flex-col items-center justify-center font-body">
+      <div className="bg-black w-full h-screen flex flex-col items-center justify-center font-body">
         <img src="/logo.png" alt="logo" className="h-[160px] animate-bounce" />
         <h2 className="text-7xl font-semibold ">Loading...</h2>
       </div>
@@ -125,7 +125,7 @@ export default function Square() {
         <title>Playlist（square） || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
-      <div className="w-full h-[930px] max-w-[1440px] flex items-center justify-center bg-black relative">
+      <div className=" h-[930px] max-w-[1440px] flex items-center justify-center bg-black relative">
         <div className="w-[852px] h-[852px] bg-[#1a1a1a] flex items-center justify-center relative ">
           <img
             src={mainURL + nfts[currentSlideIndex]?.image}

@@ -72,7 +72,7 @@ const Profile = () => {
 
 
   return (
-    <div className="relative  ">
+    <div className="relative bg-black ">
       <Head>
         <title> My Profile || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
@@ -85,7 +85,7 @@ const Profile = () => {
         <section className="">
           <div className="max-w-[1400px] relative h-[120px] mx-auto my-0 bg-[#272D37]/60 rounded-2xl border-3 border-solid border-[#0039FF] sm:h-[80px] md:mx-2 ">
             <div className="flex items-center justify-center w-full h-full">
-              <h1 className=" font-body font-semibold text-5xl md:text-2xl">
+              <h1 className="text-white font-body font-semibold text-5xl md:text-2xl">
                 My NFTs
               </h1>
             </div>

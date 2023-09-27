@@ -78,7 +78,7 @@ export default function Home() {
 
       <div className="relative overflow-hidden bg-black">
 
-        <section className="max-w-[1240px] mt-30 mb-20 mx-auto grid grid-cols-2  gap-2 font-body h-[540px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
+        <section className="max-w-[1240px] mt-30 mb-20 mx-auto grid grid-cols-2  gap-2 font-body h-[930px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
 
           <div className="relative flex flex-col items-center justify-center h-full min-h-[56vh] sm:items-center">
             {/* 奥の正方形の画像 */}
@@ -91,7 +91,7 @@ export default function Home() {
               <img src="/images/Treasure Art_LOGO_L.png" className="w-full  object-cover" alt="Foreground Image" />
             </div>
 
-            <div className="absolute top-[calc(50%+12.5%)] left-[15px] w-full">
+            <div className="absolute top-[calc(30%+12.5%)] left-[15px] w-full">
               {addr ? (
                 <button
                   type="button"

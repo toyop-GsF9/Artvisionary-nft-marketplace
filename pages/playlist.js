@@ -98,7 +98,7 @@ const Dashboard = () => {
 
   if (!loading)
     return (
-      <div className="w-full h-screen flex flex-col items-center justify-center font-body">
+      <div className="bg-black w-full h-screen flex flex-col items-center justify-center font-body">
         <img src="/logo.png" alt="logo" className="h-[160px] animate-bounce" />
         <h2 className="text-7xl font-semibold ">Loading...</h2>
       </div>

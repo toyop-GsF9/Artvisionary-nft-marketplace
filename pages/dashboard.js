@@ -99,7 +99,7 @@ const Dashboard = () => {
 
   if (!loading)
     return (
-      <div className="w-full h-screen flex flex-col items-center justify-center font-body">
+      <div className="w-full h-screen flex flex-col items-center justify-center font-body bg-black">
         <img src="/logo.png" alt="logo" className="h-[160px] animate-bounce" />
         <h2 className="text-7xl font-semibold ">Loading...</h2>
       </div>
@@ -120,7 +120,7 @@ const Dashboard = () => {
 
 
   return (
-    <div className="relative ">
+    <div className="relative bg-black">
       {" "}
       <Head>
         <title>Dashboard || Treasure Art</title>
@@ -134,7 +134,7 @@ const Dashboard = () => {
         </div>
       ) : (
         <div className="relative overflow-hidden">
-          <h1 className="text-center">NFTs</h1>
+          <h1 className="text-center text-[#fff]">Gem stones</h1>
           {/* <button onClick={() => setIsModalOpen(true)}>Open Slideshow</button>
           {isModalOpen && (
             <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-70">
@@ -150,7 +150,7 @@ const Dashboard = () => {
           )} */}
 
 
-          <section className="max-w-[1200px] my-20 mx-auto grid grid-cols-3 md:grid-cols-2 gap-4 font-body  overflow-hidden top-7 md:gap-5 medium md:px-5 sm:grid-cols-1 sm:h-full relative justify-center items-center ">
+          <section className="bg-black max-w-[1200px] my-20 mx-auto grid grid-cols-3 md:grid-cols-2 gap-4 font-body  overflow-hidden top-7 md:gap-5 medium md:px-5 sm:grid-cols-1 sm:h-full relative justify-center items-center ">
             {nfts?.map((nft, i) => (
               <div key={i} className="w-full h-[536px] sm:h-full ssm:h-max">
                 <div
@@ -185,7 +185,7 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className="">
-                    <h1 className="max-h-[36px]">{nft.name}</h1>
+                    <h1 className="max-h-[36px] text-[#fff]">{nft.name}</h1>
                     <div className="h-[56px] flex justify-between">
                       <div className="flex flex-row gap-2">
                         <div>
@@ -199,7 +199,7 @@ const Dashboard = () => {
                       </div>
                       <div>
                         <p className="my-1 text-[#8F9CA9]">価格</p>
-                        <h4 className="my-0 ">{nft.price} Matic</h4>
+                        <h4 className="my-0 text-[#fff]">{nft.price} Matic</h4>
                       </div>
                     </div>
                   </div>
