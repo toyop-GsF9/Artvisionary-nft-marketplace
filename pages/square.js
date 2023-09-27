@@ -154,7 +154,7 @@ export default function Square() {
               </span>
             </div>
           </div>
-          <div className="absolute bottom-0 right-0 mr-4 mb-4">
+          <div className="absolute bottom-[-15px] right-[-15px] mr-4 mb-4">
             <QRCodeComponent
               value={nftDetailURL}
               className="w-[81px] h-[81px]"
