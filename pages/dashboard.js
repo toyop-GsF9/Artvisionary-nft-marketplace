@@ -185,7 +185,7 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className="">
-                    <h1>{nft.name}</h1>
+                    <h1 className="max-h-[36px]">{nft.name}</h1>
                     <div className="h-[56px] flex justify-between">
                       <div className="flex flex-row gap-2">
                         <div>
