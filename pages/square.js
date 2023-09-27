@@ -147,7 +147,7 @@ export default function Square() {
               <img
                 className="w-9 h-6 rounded-[9px]"
                 alt="MATIC"
-                src="/images/polygon-matic.webp"
+                src="/images/polygonlogo-mono.png"
               />
               <span className="ml-2 font-semibold leading-[32px]">
                 0.01 MATIC
