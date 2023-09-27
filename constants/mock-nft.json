@@ -2,19 +2,19 @@
   {
     "id": 1,
     "image": "images/wallet.png",
-    "title": "Set up your wallet",
-    "description": "Choose Metamask Wallet For Best Experience"
+    "title": "Create & Sell NFT Art",
+    "description": "Easily turn your unique art into NFTs and sell to the world."
   },
   {
     "id": 2,
     "image": "images/nft2.png",
-    "title": "Add your NFTs",
-    "description": "Once you’ve set up your wallet of choice,Start Creating your Your NFTs"
+    "title": "Exhibit Your NFT Art",
+    "description": "Showcase your artwork in a digital gallery. Elevate to a visually captivating stage."
   },
   {
     "id": 3,
     "image": "images/nft3.png",
-    "title": "List them for sale",
-    "description": "List Out all the Top hot notch NFTs available for sale"
+    "title": "Direct Purchase from Exhibition",
+    "description": "Buy your favorite pieces directly from the gallery. Ensuring artist royalties."
   }
 ]
