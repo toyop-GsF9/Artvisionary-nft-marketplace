@@ -68,42 +68,30 @@ const Dashboard = () => {
     getNfts();
   }, []);
 
-  // useEffect(() => {
-  //   // 3秒ごとにnextSlide関数を実行するタイマーを設定
-  //   const timer = setInterval(() => {
-  //     if (isModalOpen) {
-  //       nextSlide();
-  //     }
-  //   }, 3000);
 
-  //   useEffect(() => {
-  //     let timer;
 
-  //     if (!loading) {
-  //       // loadingがfalseの場合、10秒後に実行されるタイマーをセット
-  //       timer = setTimeout(() => {
 
-  //         // ホームページへのリダイレクト
-  //         router.push('/');
 
-  //       }, 10000); // 10秒後
-  //     } // コンポーネントがアンマウントされたとき、またはloadingが変わったときにタイマーをクリア
-  //     return () => clearTimeout(timer);
-  //   }, [loading]);
-
-  //   // クリーンアップ関数: タイマーを解除する
-  //   return () => clearInterval(timer);
-  // }, [isModalOpen, currentSlideIndex]);
-
+  // if (!loading)
+  //   return (
+  //     <div className="w-full h-screen flex flex-col items-center justify-center font-body bg-black">
+  // <img src="/logo.png" alt="logo" className="h-[160px] animate" />
+  //       <h2 className="text-7xl font-semibold ">Loading...</h2>
+  //     </div>
+  //   );
 
 
   if (!loading)
     return (
-      <div className="w-full h-screen flex flex-col items-center justify-center font-body bg-black">
-        <img src="/logo.png" alt="logo" className="h-[160px] animate-bounce" />
-        <h2 className="text-7xl font-semibold ">Loading...</h2>
+      <div className="w-full h-screen flex flex-col items-center justify-center font-body bg-gradient-to-br from-gray-900 to-black">
+        <img src="/logo.png" alt="logo" className="h-[160px] animate-pulse" />
+        <h2 className="text-7xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-black mt-5">
+          Loading...
+        </h2>
       </div>
-    );
+    )
+
+
 
 
 
