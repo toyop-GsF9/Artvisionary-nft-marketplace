@@ -21,6 +21,30 @@ const Header = () => {
       setHasScrolled(false);
     }
   };
+  const toggleWalletConnection = () => {
+    const { ethereum } = window;
+
+    if (addr) {
+      // ウォレットを切断
+      localStorage.removeItem("walletAddress");
+      setAddr("");
+    } else {
+      // ウォレットを接続
+      if (!ethereum) {
+        alert("MetaMaskをインストールしてください");
+        return;
+      }
+      ethereum.request({ method: 'eth_requestAccounts' })
+        .then(accounts => {
+          localStorage.setItem("walletAddress", accounts[0]);
+          setAddr(accounts[0]);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  };
+
 
   // ウォレット接続の解除関数
   const disconnectWallet = () => {
@@ -127,9 +151,15 @@ const Header = () => {
           </ul>
 
           <div className="flex items-center justify-end space-x-4">
-            {/* <button onClick={disconnectWallet} className="text-xs sm:text-sm bg-blue-600 px-1 sm:px-2 py-0.5 sm:py-1 rounded hover:bg-blue-700">
-              Disconnect Wallet
-            </button> */}
+            {addr ? (
+              <button onClick={toggleWalletConnection} className="text-xs sm:text-sm bg-sky-500 px-1 sm:px-2 py-0.5 sm:py-1 rounded hover:bg-blue-800">
+                DisconnectWallet
+              </button>
+            ) : (
+              <button onClick={toggleWalletConnection} className="text-xs sm:text-sm bg-blue-600 px-1 sm:px-2 py-0.5 sm:py-1 rounded hover:bg-blue-700">
+                ConnectWallet
+              </button>
+            )}
             <p className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-800 sm:hidden">
               {truncateEthAddress(addr)}
             </p>
@@ -202,10 +232,10 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/sample-playlist">
+              <Link href="/square">
                 <a
                   className={
-                    currentRoute === "/profile"
+                    currentRoute === "/square"
                       ? "text-white text-base font-medium"
                       : "text-gray-500 font-normal hover:text-white"
                   }
