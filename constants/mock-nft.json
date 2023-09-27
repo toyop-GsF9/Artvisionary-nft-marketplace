@@ -7,14 +7,14 @@
   },
   {
     "id": 2,
-    "image": "images/nft2.png",
+    "image": "images/nft4.png",
     "title": "Exhibit Your NFT Art",
     "description": "Showcase your artwork in a digital gallery. Elevate to a visually captivating stage."
   },
   {
     "id": 3,
-    "image": "images/nft3.png",
-    "title": "Direct Purchase from Exhibition",
+    "image": "images/nft5.png",
+    "title": "Direct Purchase",
     "description": "Buy your favorite pieces directly from the gallery. Ensuring artist royalties."
   }
 ]
