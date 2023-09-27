@@ -91,7 +91,7 @@ export default function Home() {
               <img src="/images/Treasure Art_LOGO_L.png" className="w-full  object-cover" alt="Foreground Image" />
             </div>
 
-            <div className="absolute top-[calc(50%+12.5%)] left-0 w-full">
+            <div className="absolute top-[calc(50%+12.5%)] left-[15px] w-full">
               {addr ? (
                 <button
                   type="button"
