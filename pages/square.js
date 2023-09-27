@@ -145,9 +145,9 @@ export default function Square() {
             <div className="flex items-center pr-24">
               {" "}
               <img
-                className="w-6 h-9 rounded-[9px]"
+                className="w-9 h-6 rounded-[9px]"
                 alt="MATIC"
-                src="/images/ethereum-1@2x.png"
+                src="/images/polygon-matic.webp"
               />
               <span className="ml-2 font-semibold leading-[32px]">
                 0.01 MATIC
