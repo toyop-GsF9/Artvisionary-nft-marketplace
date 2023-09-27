@@ -103,7 +103,7 @@ export default function Home() {
               ) : (
                 <button
                   type="button"
-                  className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer duration-250 ease-in-out hover:transform-x-1 hover:drop-shadow-xl hover:shadow-sky-600 w-full transition transform hover:-translate-y-3 motion-reduce:transition-none motion-reduce:hover:transform-none z-20"
+                  className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer duration-250 ease-in-out hover:transform-x-1 hover:drop-shadow-xl hover:shadow-sky-600 w-auto transition transform hover:-translate-y-3 motion-reduce:transition-none motion-reduce:hover:transform-none z-20"
                   onClick={connectWallet}
                 >
                   Connect Wallet
