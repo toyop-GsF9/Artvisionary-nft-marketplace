@@ -78,8 +78,8 @@ export default function Home() {
 
       <div className="relative overflow-hidden bg-black">
 
-        <section className="max-w-[1240px] mt-30 mb-20 mx-auto grid grid-cols-2  gap-2 font-body h-[930px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
-
+        {/* <section className="max-w-[1240px] mt-30 mb-20 mx-auto grid grid-cols-2  gap-2 font-body h-[930px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative "> */}
+        <section className="max-w-[1240px] mt-10 mb-20 mx-auto grid grid-cols-2  gap-2 font-body h-[930px] overflow-hidden top-7 md:gap-12 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
           <div className="relative flex flex-col items-center justify-center h-full min-h-[56vh] sm:items-center">
             {/* 奥の正方形の画像 */}
             <div className="absolute top-0 left-0 w-full h-[0px] pb-full"> {/* pb-fullを使用してアスペクト比を1:1に保つ */}
@@ -145,7 +145,8 @@ export default function Home() {
 
         </section>
 
-        <section className="max-w-[1240px] mt-[-10rem] mb-20 mx-auto  gap-2 font-body top-7 ">
+        {/* <section className="max-w-[1240px] mt-[-7rem] mb-20 mx-auto  gap-2 font-body top-7 "> */}
+        <section className="max-w-[1240px] mt-10 mb-20 mx-auto  gap-2 font-body top-7 ">
           <h1 className="text-center w-full text-[#fff]">Create and sell your NFTs</h1>
 
           <div className="top-7 grid grid-cols-3 gap-5 sm:grid-cols-1 sm:p-12 md:grid-cols-1 md:mx-10">
