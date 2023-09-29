@@ -101,7 +101,11 @@ export default function Home() {
                 <button
                   type="button"
                   className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer transition duration-250 ease-in-out hover:scale-125 hover:drop-shadow-xl hover:shadow-sky-600 w-auto focus:scale-90 z-20"
-                  onClick={connectWallet}
+                  // onClick={connectWallet}
+                  onClick={() => {
+
+                    window.location.href = "/createnft";
+                  }}
                 >
                   Create an NFT
                 </button>
