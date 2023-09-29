@@ -7,15 +7,17 @@ import axios from "axios";
 import { ethers } from "ethers";
 import { truncateEthAddress } from "../utils/truncAddress";
 import { useRouter } from "next/router";
-import { useCheckWalletConnection } from "../hooks/useCheckWalletConnection";
+// import { useCheckWalletConnection } from "../hooks/useCheckWalletConnection";
 
 const mainURL = `https://arweave.net/`;
 
 const Dashboard = () => {
-  useCheckWalletConnection();
+  // useCheckWalletConnection();
   const [nfts, setNts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const router = useRouter();
@@ -31,7 +33,11 @@ const Dashboard = () => {
     return contract;
   };
 
-  const getNfts = async () => {
+  const maxRetryCount = 3;
+  const retryInterval = 2000; // 2 seconds
+
+
+  const getNfts = async (retryCount = 0) => {
     try {
       const contract = await getContract();
 
@@ -58,9 +64,20 @@ const Dashboard = () => {
       );
       setNts([...items].reverse());
       setLoading(true);
+      //   } catch (error) {
+      //     console.error(error);
+      //     toast.error("Something went wrong");
+      //     setShowModal(true);
+      //   }
+      // };
     } catch (error) {
       console.error(error);
+      if (error.message.includes("429") && retryCount < maxRetryCount) {
+        setTimeout(() => getNfts(retryCount + 1), retryInterval);
+        return;
+      }
       toast.error("Something went wrong");
+      setShowModal(true);
     }
   };
 
@@ -91,7 +108,22 @@ const Dashboard = () => {
       </div>
     )
 
-
+  if (showModal) {
+    return (
+      <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-70">
+        <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+          <h2>エラーが発生しました</h2>
+          <p>ウォレットを接続してください。</p>
+          <button
+            className="mt-4 bg-blue-500 text-white py-2 px-4 rounded"
+            onClick={connectWallet}
+          >
+            コネクトウォレット
+          </button>
+        </div>
+      </div>
+    );
+  }
 
 
 
