@@ -7,12 +7,12 @@ import axios from "axios";
 import { ethers } from "ethers";
 import { truncateEthAddress } from "../utils/truncAddress";
 import { useRouter } from "next/router";
-import { useCheckWalletConnection } from "../hooks/useCheckWalletConnection";
+// import { useCheckWalletConnection } from "../hooks/useCheckWalletConnection";
 
 const mainURL = `https://arweave.net/`;
 
 const Dashboard = () => {
-  useCheckWalletConnection();
+  // useCheckWalletConnection();
   const [nfts, setNts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
