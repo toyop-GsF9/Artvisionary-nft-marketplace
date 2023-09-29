@@ -33,7 +33,11 @@ const Dashboard = () => {
     return contract;
   };
 
-  const getNfts = async () => {
+  const maxRetryCount = 3;
+  const retryInterval = 2000; // 2 seconds
+
+
+  const getNfts = async (retryCount = 0) => {
     try {
       const contract = await getContract();
 
@@ -60,8 +64,18 @@ const Dashboard = () => {
       );
       setNts([...items].reverse());
       setLoading(true);
+      //   } catch (error) {
+      //     console.error(error);
+      //     toast.error("Something went wrong");
+      //     setShowModal(true);
+      //   }
+      // };
     } catch (error) {
       console.error(error);
+      if (error.message.includes("429") && retryCount < maxRetryCount) {
+        setTimeout(() => getNfts(retryCount + 1), retryInterval);
+        return;
+      }
       toast.error("Something went wrong");
       setShowModal(true);
     }

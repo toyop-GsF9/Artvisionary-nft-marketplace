@@ -27,16 +27,24 @@ export default function Home() {
       });
       setIsWalletConnected(true);
       localStorage.setItem("walletAddress", accounts[0]);
-      router.push("/dashboard");
+      router.push("/");
     } catch (error) {
       console.error(error);
     }
   };
 
+  // useEffect(() => {
+  //   const addr = localStorage.getItem("walletAddress");
+  //   setAddr(addr);
+  // }, []);
   useEffect(() => {
     const addr = localStorage.getItem("walletAddress");
-    setAddr(addr);
+    if (addr) {
+      setIsWalletConnected(true);
+      setAddr(addr);
+    }
   }, []);
+
 
   const playlists = {
 
