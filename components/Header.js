@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { truncateEthAddress } from "../utils/truncAddress";
+import Image from 'next/image';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +21,30 @@ const Header = () => {
       setHasScrolled(false);
     }
   };
+  const toggleWalletConnection = () => {
+    const { ethereum } = window;
+
+    if (addr) {
+      // ウォレットを切断
+      localStorage.removeItem("walletAddress");
+      setAddr("");
+    } else {
+      // ウォレットを接続
+      if (!ethereum) {
+        alert("MetaMaskをインストールしてください");
+        return;
+      }
+      ethereum.request({ method: 'eth_requestAccounts' })
+        .then(accounts => {
+          localStorage.setItem("walletAddress", accounts[0]);
+          setAddr(accounts[0]);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  };
+
 
   // ウォレット接続の解除関数
   const disconnectWallet = () => {
@@ -45,20 +70,27 @@ const Header = () => {
     <>
       <section
         className={` ${isOpen
-          ? `sticky top-0 z-[100] w-full px-2 py-2 sm:px-4 transition duration-250 ease-in-out left-[0] `
-          : `sticky top-0 z-[100] w-full px-2 py-2 sm:px-4 transition duration-250 ease-in-out left-[-100%]`
+          ? `sticky top-0 z-[100] w-full  sm:px-4 transition duration-250 ease-in-out left-[0] `
+          : `sticky top-0 z-[100] w-full  sm:px-4 transition duration-250 ease-in-out left-[-100%]`
           }`}
       >
         <nav
           className={
             hasScrolled
-              ? `rounded-lg px-6 font-body flex items-center justify-between max-w-[1240px] my-2 mx-auto h-16 md:px-4 md:mx-5 backdrop-blur-sm bg-black sm:px-1 ssm:p-1 transition duration-250 ease-in-out border border-solid border-sky-600`
-              : `rounded-lg px-6 font-body flex items-center justify-between max-w-[1440px] my-2 mx-auto h-16 md:px-4 md:mx-5 bg-black sm:px-1 ssm:p-1 transition duration-250 ease-in-out`
+              ? ` font-body flex items-center justify-between max-w-[1240px] mb-2 mx-auto h-16 md:px-4 md:mx-5 backdrop-blur-sm bg-black sm:px-1 ssm:p-1 transition duration-250 ease-in-out border border-solid border-sky-600`
+              : ` font-body flex items-center justify-between max-w-[1440px] mb-2 mx-auto h-16 md:px-4 md:mx-5 bg-black sm:px-1 ssm:p-1 transition duration-250 ease-in-out`
           }
         >
-          <h2 className="text-2xl sm:text-3xl text-white">
+          {/* <h2 className="text-2xl sm:text-3xl text-white ml-3">
             <Link href="/">
-              <a>Artvisionary</a>
+              <a>Treasure Art</a>
+            </Link>
+          </h2> */}
+          <h2 className="mx-2 mb-2">
+            <Link href="/">
+              <a>
+                <Image src="/images/Treasure Art_LOGO_M.png" alt="Treasure Art Logo" width={130} height={45} />
+              </a>
             </Link>
           </h2>
           <ul className="flex gap-3 items-center justify-center transition-all list-none sm:hidden">
@@ -104,10 +136,10 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/sample-playlist">
+              <Link href="/square">
                 <a
                   className={
-                    currentRoute === "/profile"
+                    currentRoute === "/square"
                       ? "text-white text-base font-medium"
                       : "text-gray-500 font-normal hover:text-white"
                   }
@@ -118,17 +150,16 @@ const Header = () => {
             </li>
           </ul>
 
-          {/* <button onClick={disconnectWallet}>
-            Disconnect Wallet
-          </button>
-          <p className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-800 sm:hidden">
-            {truncateEthAddress(addr)}
-          </p> */}
-
           <div className="flex items-center justify-end space-x-4">
-            <button onClick={disconnectWallet} className="text-xs sm:text-sm bg-blue-600 px-1 sm:px-2 py-0.5 sm:py-1 rounded hover:bg-blue-700">
-              Disconnect Wallet
-            </button>
+            {addr ? (
+              <button onClick={toggleWalletConnection} className="text-xs sm:text-sm bg-sky-500 px-1 sm:px-2 py-0.5 sm:py-1 rounded hover:bg-blue-800">
+                DisconnectWallet
+              </button>
+            ) : (
+              <button onClick={toggleWalletConnection} className="text-xs sm:text-sm bg-blue-600 px-1 sm:px-2 py-0.5 sm:py-1 rounded hover:bg-blue-700">
+                ConnectWallet
+              </button>
+            )}
             <p className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-800 sm:hidden">
               {truncateEthAddress(addr)}
             </p>
@@ -157,7 +188,7 @@ const Header = () => {
 
           <h2 className="text-2xl ">
             <Link href="/">
-              <a>Artvisionary</a>
+              <a>Treasure Art</a>
             </Link>
           </h2>
           <ul className="grid gap-3 grid-rows-3 items-center justify-center transition-all list-none nav_links text-lg">
@@ -201,10 +232,10 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/sample-playlist">
+              <Link href="/square">
                 <a
                   className={
-                    currentRoute === "/profile"
+                    currentRoute === "/square"
                       ? "text-white text-base font-medium"
                       : "text-gray-500 font-normal hover:text-white"
                   }

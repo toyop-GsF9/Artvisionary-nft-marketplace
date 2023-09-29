@@ -5,7 +5,7 @@ export default function Signup() {
 	return (
 		<>
 			<Head>
-				<title>ArtVisionary</title>
+				<title>Treasure Artry</title>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="initial-scale=1, width=device-width" />
 			</Head>

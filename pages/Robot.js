@@ -42,7 +42,7 @@ export default function Sampleplay() {
 	};
 
 
-	const [currentPlaylist, setCurrentPlaylist] = useState('ColorfulAnimal');
+	const [currentPlaylist, setCurrentPlaylist] = useState('Robot');
 	const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
 	const nextSlide = () => {

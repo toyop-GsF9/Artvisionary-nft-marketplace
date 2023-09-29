@@ -52,19 +52,19 @@ export default function ProfileArtist() {
         }
       );
 
-      console.log(response.data);
-			router.push("/dashboard"); 
-    } catch (error) {
-      console.error("There was an error submitting the form", error);
-    }
-  };
-  return (
-    <div className="flex flex-col w-full min-h-screen text-white font-[var(--font-inter)] bg-black">
-      <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <title>ArtVisionary</title>
-      </Head>
+			const data = await response.json();
+			console.log(data);
+		} catch (error) {
+			console.error('There was an error submitting the form', error);
+		}
+	};
+	return (
+		<div className="flex flex-col w-full min-h-screen text-white font-[var(--font-inter)] bg-black">
+			<Head>
+				<meta charSet="utf-8" />
+				<meta name="viewport" content="initial-scale=1, width=device-width" />
+				<title>Treasure Art</title>
+			</Head>
 
       <div className="flex flex-row md:flex-col justify-center items-center h-[362px] mx-4 mt-8 md:mt-32">
         <div className="text-2xl flex-grow mb-4 md:mb-0 md:mr-4">

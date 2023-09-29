@@ -72,9 +72,9 @@ const Profile = () => {
 
 
   return (
-    <div className="relative  ">
+    <div className="relative bg-black ">
       <Head>
-        <title> My Profile || Artvisionary </title>
+        <title> My Profile || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
       <Header />
@@ -83,18 +83,18 @@ const Profile = () => {
 
       <div className="relative overflow-hidden">
         <section className="">
-          <div className="max-w-[1400px] relative h-[280px] mx-auto my-0 bg-[#272D37]/60 rounded-2xl border-3 border-solid border-[#0039FF] sm:h-[150px] md:mx-2 ">
+          <div className="max-w-[1400px] relative h-[120px] mx-auto my-0 bg-[#272D37]/60 rounded-2xl border-3 border-solid border-[#0039FF] sm:h-[80px] md:mx-2 ">
             <div className="flex items-center justify-center w-full h-full">
-              <h1 className=" font-body font-semibold text-5xl md:text-2xl">
+              <h1 className="text-white font-body font-semibold text-5xl md:text-2xl">
                 My NFTs
               </h1>
             </div>
 
-            <div className="absolute w-[160px] h-[160px] sm:w-[80px] sm:h-[80px] bg-white left-10 -bottom-[80px] rounded-[45px] sm:rounded-3xl profile flex  sm:-bottom-[40px] items-center justify-center">
+            <div className="absolute w-[160px] h-[120px] sm:w-[80px] sm:h-[80px] bg-white left-10 -bottom-[80px] rounded-[45px] sm:rounded-3xl profile flex  sm:-bottom-[40px] items-center justify-center">
               <img
                 src="logo.png"
                 alt="Logo"
-                className="w-[80px] h-[80px] sm:h-[60px] sm:w-[60px]"
+                className="w-[110px] h-[70px] sm:h-[40px] sm:w-[60px]"
               />
             </div>
           </div>

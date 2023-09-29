@@ -126,8 +126,8 @@ const Create = () => {
 
   if (!bundlrInstance) {
     return (
-      <div className="justify-center items-center h-screen flex font-body flex-col">
-        <h3 className="text-4xl font-bold sm:text-xl">
+      <div className="bg-black justify-center items-center h-screen flex font-body flex-col">
+        <h3 className="text-4xl font-bold sm:text-xl text-[#fff]">
           Let&apos;s Create now 💱
         </h3>
         {/* Let&apos;s initialise Bundlr now 💱 */}
@@ -161,15 +161,15 @@ const Create = () => {
   }
 
   return (
-    <div className="font-body">
+    <div className="font-body bg-black">
       <Head>
-        <title>Create NFT || Artvisionary </title>
+        <title>Create NFT || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
 
       <Header />
 
-      <h1 className="text-center">Artvisionary Create NFT</h1>
+      <h1 className="text-center text-white">Treasure Art Create NFT</h1>
 
       <div className="relative overflow-hidden">
         <section className="max-w-[1024px] my-20 mx-auto grid grid-cols-2  gap-10 font-body  overflow-hidden top-7 md:gap-10 medium md:px-5 sm:grid-cols-1 sm:h-full relative ">
@@ -195,7 +195,7 @@ const Create = () => {
               </div>
             ) : (
               <div className="h-full flex justify-center items-center">
-                <h2 className="text-center">
+                <h2 className="text-center text-white">
                   画像を選択してください。
                 </h2>
               </div>
@@ -206,7 +206,7 @@ const Create = () => {
             <div className="flex flex-col">
               <label className="text-2xl my-1 font-semibold ">タイトル</label>
               <input
-                placeholder="eg.Kittos ka"
+                placeholder=""
                 className="px-5 py-3 rounded-xl
                placeholder:text-slate-400 outline-none border-none  bg-[#272D37]/60 placeholder:font-body font-body"
                 value={nftDetails.name}
@@ -219,7 +219,7 @@ const Create = () => {
             <div className="flex flex-col">
               <label className="text-2xl my-1 font-semibold">説明文</label>
               <textarea
-                placeholder="eg.Kittos ka"
+                placeholder=""
                 className="px-5 py-3 rounded-lg placeholder:text-slate-400 bg-[#272D37]/60 border-none outline-none placeholder:font-body tx font-body"
                 value={nftDetails.description}
                 onChange={(e) =>

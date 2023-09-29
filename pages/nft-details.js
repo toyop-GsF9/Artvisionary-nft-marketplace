@@ -7,11 +7,12 @@ import ContractABI from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplac
 import { toast } from "react-toastify";
 import { ethers } from "ethers";
 
+
 const mainURL = `https://arweave.net/`;
 
 const NFTDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
-
+  const [isWalletConnected, setIsWalletConnected] = useState(false);
   const router = useRouter();
 
   const [addr, setAddr] = useState("");
@@ -26,6 +27,25 @@ const NFTDetails = () => {
     tokenURI: "",
   });
 
+  const connectWallet = async () => {
+    try {
+      const { ethereum } = window;
+
+      if (!ethereum) {
+        alert("Please Install MetaMask");
+        return;
+      }
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      setIsWalletConnected(true);
+      localStorage.setItem("walletAddress", accounts[0]);
+      router.push("/nft-details?tokenId=${nft.tokenId}&tokenURI=${nft.tokenURI}");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     if (!router.isReady) return;
 
@@ -33,6 +53,23 @@ const NFTDetails = () => {
 
     setIsLoading(false);
   }, [router.isReady]);
+
+  useEffect(() => {
+    const checkWalletConnection = async () => {
+      if (typeof window.ethereum !== "undefined") { // Ethereumプロバイダーの存在確認
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const accounts = await provider.listAccounts();
+        if (accounts.length === 0) {
+          setIsWalletConnected(false);
+        } else {
+          setIsWalletConnected(true);
+        }
+      } else {
+        setIsWalletConnected(false);  // Ethereumプロバイダーが存在しない場合
+      }
+    };
+    checkWalletConnection();
+  }, [router]);
 
   useEffect(() => {
     const addr = localStorage.getItem("walletAddress");
@@ -73,7 +110,7 @@ const NFTDetails = () => {
   return (
     <div>
       <Head>
-        <title>{nft.name} || Artvisionary</title>
+        <title>{nft.name} || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
 
@@ -117,19 +154,29 @@ const NFTDetails = () => {
 
             <div>
               <p>Blockchain</p>
-              <h2>Mumbai</h2>
+              <h2>Polygon(Mumbai)</h2>
             </div>
 
             <button
               className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer  duration-250 ease-in-out hover:transform-x-1 hover:drop-shadow-xl hover:shadow-sky-600 w-auto mt-8 transition transform hover:-translate-y-3 motion-reduce:transition-none motion-reduce:hover:transform-none "
               onClick={() => {
-                addr === nft.owner.toLocaleLowerCase()
-                  ? reSellNFT(nft)
-                  : buyNft(nft);
+                if (!isWalletConnected) {
+                  connectWallet();
+                } else if (addr === nft.owner.toLocaleLowerCase()) {
+                  reSellNFT(nft);
+                } else {
+                  buyNft(nft);
+                }
               }}
             >
-              {addr === nft.owner.toLocaleLowerCase() ? "Sell NFT" : "Buy NFT"}
+              {!isWalletConnected
+                ? "Connect Wallet"
+                : addr === nft.owner.toLocaleLowerCase()
+                  ? "Sell NFT"
+                  : "Buy NFT"}
             </button>
+
+
           </div>
         </section>
         <Footer />

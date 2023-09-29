@@ -84,7 +84,7 @@ export default function Square() {
     // 3秒ごとにnextSlide関数を呼び出すタイマーを設定
     const timerId = setInterval(() => {
       nextSlide();
-    }, 10000); // 3000ミリ秒 = 3秒
+    }, 5000); // 3000ミリ秒 = 3秒
 
     // useEffectのクリーンアップ関数でタイマーをクリア
     return () => {
@@ -96,13 +96,11 @@ export default function Square() {
 
   if (!loading)
     return (
-      <div className="w-full h-screen flex flex-col items-center justify-center font-body bg-gradient-to-br from-gray-900 to-black">
-        <img src="/logo.png" alt="logo" className="h-[160px] animate-pulse" />
-        <h2 className="text-7xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-black mt-5">
-          Loading...
-        </h2>
+      <div className="w-full h-screen flex flex-col items-center justify-center font-body">
+        <img src="/logo.png" alt="logo" className="h-[160px] animate-bounce" />
+        <h2 className="text-7xl font-semibold ">Loading...</h2>
       </div>
-    )
+    );
 
 
 
@@ -120,14 +118,14 @@ export default function Square() {
   const nftDetailURL = `https://artvisionary02.vercel.app/nft-details?price=${nfts[currentSlideIndex]?.price}&tokenId=${nfts[currentSlideIndex]?.tokenId}&seller=${nfts[currentSlideIndex]?.seller}&owner=${nfts[currentSlideIndex]?.owner}&image=${encodeURIComponent(nfts[currentSlideIndex]?.image)}&name=${encodeURIComponent(nfts[currentSlideIndex]?.name)}&description=${encodeURIComponent(nfts[currentSlideIndex]?.description)}&tokenURI=${encodeURIComponent(nfts[currentSlideIndex]?.tokenURI)}`;
   const nftDetailURL2 = `https://artvisionary02.vercel.app/dashboard`;
 
-  const truncateSeller = (seller) => seller.slice(-4);
+
   return (
     <>
       <Head>
         <title>Playlist（square） || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
-      <div className=" h-[930px] max-w-[1440px] flex items-center justify-center bg-black relative">
+      <div className="w-full h-[930px] max-w-[1440px] flex items-center justify-center bg-black relative">
         <div className="w-[852px] h-[852px] bg-[#1a1a1a] flex items-center justify-center relative ">
           <img
             src={mainURL + nfts[currentSlideIndex]?.image}
@@ -141,28 +139,22 @@ export default function Square() {
                 alt="icon"
                 src="/images/mask-group@2x.png"
               />
-              {/* <span className="underline truncate ml-2">shin tanaka</span>
-              <span className="truncate ml-6">title</span> */}
-              <span className="underline truncate ml-2">{truncateSeller(nfts[currentSlideIndex]?.seller)}</span>
-              <span className="truncate ml-6">{nfts[currentSlideIndex]?.name}</span>
-
+              <span className="underline truncate ml-2">shin tanaka</span>
+              <span className="truncate ml-6">title</span>
             </div>
             <div className="flex items-center pr-24">
               {" "}
               <img
-                className="w-9 h-6 rounded-[9px]"
+                className="w-6 h-9 rounded-[9px]"
                 alt="MATIC"
-                src="/images/polygonlogo-mono.png"
+                src="/images/ethereum-1@2x.png"
               />
-              {/* <span className="ml-2 font-semibold leading-[32px]">
-                0.01 MATIC
-              </span> */}
               <span className="ml-2 font-semibold leading-[32px]">
-                {nfts[currentSlideIndex]?.price} MATIC
+                0.01 MATIC
               </span>
             </div>
           </div>
-          <div className="absolute bottom-[-15px] right-[-15px] mr-4 mb-4">
+          <div className="absolute bottom-0 right-0 mr-4 mb-4">
             <QRCodeComponent
               value={nftDetailURL}
               className="w-[81px] h-[81px]"

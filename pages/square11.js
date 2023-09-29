@@ -84,7 +84,7 @@ export default function Square() {
     // 3秒ごとにnextSlide関数を呼び出すタイマーを設定
     const timerId = setInterval(() => {
       nextSlide();
-    }, 10000); // 3000ミリ秒 = 3秒
+    }, 5000); // 3000ミリ秒 = 3秒
 
     // useEffectのクリーンアップ関数でタイマーをクリア
     return () => {
@@ -96,13 +96,11 @@ export default function Square() {
 
   if (!loading)
     return (
-      <div className="w-full h-screen flex flex-col items-center justify-center font-body bg-gradient-to-br from-gray-900 to-black">
-        <img src="/logo.png" alt="logo" className="h-[160px] animate-pulse" />
-        <h2 className="text-7xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-black mt-5">
-          Loading...
-        </h2>
+      <div className="w-full h-screen flex flex-col items-center justify-center font-body">
+        <img src="/logo.png" alt="logo" className="h-[160px] animate-bounce" />
+        <h2 className="text-7xl font-semibold ">Loading...</h2>
       </div>
-    )
+    );
 
 
 
@@ -120,56 +118,47 @@ export default function Square() {
   const nftDetailURL = `https://artvisionary02.vercel.app/nft-details?price=${nfts[currentSlideIndex]?.price}&tokenId=${nfts[currentSlideIndex]?.tokenId}&seller=${nfts[currentSlideIndex]?.seller}&owner=${nfts[currentSlideIndex]?.owner}&image=${encodeURIComponent(nfts[currentSlideIndex]?.image)}&name=${encodeURIComponent(nfts[currentSlideIndex]?.name)}&description=${encodeURIComponent(nfts[currentSlideIndex]?.description)}&tokenURI=${encodeURIComponent(nfts[currentSlideIndex]?.tokenURI)}`;
   const nftDetailURL2 = `https://artvisionary02.vercel.app/dashboard`;
 
-  const truncateSeller = (seller) => seller.slice(-4);
+
   return (
     <>
       <Head>
         <title>Playlist（square） || Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
       </Head>
-      <div className=" h-[930px] max-w-[1440px] flex items-center justify-center bg-black relative">
-        <div className="w-[852px] h-[852px] bg-[#1a1a1a] flex items-center justify-center relative ">
+      {/* <div className="relative w-full max-w-[1440px] max-h-[930px] flex items-center justify-center text-left text-sm text-gray-600 bg-white"> */}
+      <div className="relative w-screen h-screen flex items-center justify-center text-left text-sm text-gray-600 bg-white overflow-hidden">
+        <div className="bg-black absolute top-0 left-0 w-full h-full"></div>
+
+        <div className="relative bg-[#1a1a1a] flex items-center justify-center border-4 border-gray-300 box-border w-11/12 max-w-[792px] p-[66px]">
           <img
             src={mainURL + nfts[currentSlideIndex]?.image}
             alt={nfts[currentSlideIndex]?.name}
-            className="object-contain h-[676px] w-[676px] mt-[-40px]"
+            className="object-contain w-full max-h-[75vh]"
           />
-          <div className="flex justify-between px-4 py-2 absolute bottom-2 left-0 right-0 text-[#a3a3a3] w-full">
+          <div className="flex justify-between px-4 py-2 absolute bottom-0 left-0 right-0 bg-[#1a1a1a] bg-opacity-40 text-white w-full">
             <div className="flex items-center">
-              <img
-                className="w-9 h-9 object-cover mr-1"
-                alt="icon"
-                src="/images/mask-group@2x.png"
-              />
-              {/* <span className="underline truncate ml-2">shin tanaka</span>
-              <span className="truncate ml-6">title</span> */}
-              <span className="underline truncate ml-2">{truncateSeller(nfts[currentSlideIndex]?.seller)}</span>
-              <span className="truncate ml-6">{nfts[currentSlideIndex]?.name}</span>
-
+              <img className="w-9 h-9 object-cover mr-1" alt="icon" src="/images/mask-group@2x.png" />
+              <span className="underline truncate">shin tanaka</span>
             </div>
-            <div className="flex items-center pr-24">
-              {" "}
-              <img
-                className="w-9 h-6 rounded-[9px]"
-                alt="MATIC"
-                src="/images/polygonlogo-mono.png"
-              />
-              {/* <span className="ml-2 font-semibold leading-[32px]">
-                0.01 MATIC
-              </span> */}
-              <span className="ml-2 font-semibold leading-[32px]">
-                {nfts[currentSlideIndex]?.price} MATIC
-              </span>
+            {/* <div className="font-semibold truncate">Point</div> */}
+            <div className="flex items-center">
+              <img className="w-9 h-9 rounded-[9px]" alt="MATIC" src="/images/ethereum-1@2x.png" />
+              <span className="ml-2 font-semibold leading-[36px]">0.01 MATIC</span>
             </div>
-          </div>
-          <div className="absolute bottom-[-15px] right-[-15px] mr-4 mb-4">
-            <QRCodeComponent
-              value={nftDetailURL}
-              className="w-[81px] h-[81px]"
-            />
           </div>
         </div>
+        <div className="absolute bottom-0 ">
+          <QRCodeComponent value={nftDetailURL} />
+
+        </div>
       </div>
+      <style jsx>{`
+      @media (max-width: 640px) {
+        // Mobile styles here
+      }
+    `}</style>
     </>
   );
+
+
 }
