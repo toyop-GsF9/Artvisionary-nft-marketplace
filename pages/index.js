@@ -96,11 +96,11 @@ export default function Home() {
               <img src="/images/heroimage3.jpeg" className="absolute top-0 left-0 w-[581px]  object-cover h-[581px] " alt="Background Image" />
             </div>
             {/* <div className="absolute top-[calc(30%+12.5%)] left-[15px] w-full"> */}
-            <div className="absolute top-[calc(30%+12.5%)] lg:top-[calc(50%+12.5%)] md:top-[calc(80%+12.5%)] left-[15px] w-full">
+            <div className="absolute top-[calc(30%+12.5%)] lg:top-[calc(50%+12.5%)] md:top-[calc(80%+12.5%)] sm:top-[calc(200%+12.5%)] left-[15px] w-full">
               {addr ? (
                 <button
                   type="button"
-                  className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer transition duration-250 ease-in-out hover:scale-125 hover:drop-shadow-xl hover:shadow-sky-600 w-auto focus:scale-90 z-20"
+                  className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer transition duration-250 ease-in-out hover:scale-125 hover:drop-shadow-xl hover:shadow-sky-600 w-auto focus:scale-90 z-100"
                   // onClick={connectWallet}
                   onClick={() => {
 
@@ -112,7 +112,7 @@ export default function Home() {
               ) : (
                 <button
                   type="button"
-                  className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer duration-250 ease-in-out hover:transform-x-1 hover:drop-shadow-xl hover:shadow-sky-600 w-auto transition transform hover:-translate-y-3 motion-reduce:transition-none motion-reduce:hover:transform-none z-20"
+                  className="bg-[#1E50FF] outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer duration-250 ease-in-out hover:transform-x-1 hover:drop-shadow-xl hover:shadow-sky-600 w-auto transition transform hover:-translate-y-3 motion-reduce:transition-none motion-reduce:hover:transform-none z-100"
                   onClick={connectWallet}
                 >
                   Connect Wallet
