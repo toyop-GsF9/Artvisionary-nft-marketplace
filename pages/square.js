@@ -64,7 +64,7 @@ export default function Square() {
       setLoading(true);
     } catch (error) {
       console.error(error);
-      toast.error("Something went wrong");
+      toast.error("Something went wrong、更新ボタンを押してください。");
     }
   };
 

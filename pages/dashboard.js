@@ -93,7 +93,7 @@ const Dashboard = () => {
         setTimeout(() => getNfts(retryCount + 1), retryInterval);
         return;
       }
-      toast.error("Something went wrong");
+      toast.error("Something went wrong,少し待った後、更新ボタンを押してください。");
       setShowModal(true);
     }
   };
