@@ -194,8 +194,8 @@ const Create = () => {
                 />
               </div>
             ) : (
-              <div className="h-full flex justify-center items-center">
-                <h2 className="text-center text-white">
+              <div className="h-full flex justify-center items-center ">
+                <h2 className="text-center text-white ">
                   画像を選択してください。
                 </h2>
               </div>
@@ -204,9 +204,9 @@ const Create = () => {
 
           <div className="w-full flex flex-col font-body gap-5">
             <div className="flex flex-col">
-              <label className="text-2xl my-1 font-semibold ">タイトル</label>
+              <label className="text-2xl my-1 font-semibold text-white">タイトル</label>
               <input
-                placeholder=""
+                placeholder="title"
                 className="px-5 py-3 rounded-xl
                placeholder:text-slate-400 outline-none border-none  bg-[#272D37]/60 placeholder:font-body font-body"
                 value={nftDetails.name}
@@ -217,9 +217,9 @@ const Create = () => {
             </div>
 
             <div className="flex flex-col">
-              <label className="text-2xl my-1 font-semibold">説明文</label>
+              <label className="text-2xl my-1 font-semibold text-white">説明文</label>
               <textarea
-                placeholder=""
+                placeholder="explanation"
                 className="px-5 py-3 rounded-lg placeholder:text-slate-400 bg-[#272D37]/60 border-none outline-none placeholder:font-body tx font-body"
                 value={nftDetails.description}
                 onChange={(e) =>
@@ -230,10 +230,10 @@ const Create = () => {
             </div>
 
             <div className="flex flex-col">
-              <label className="text-2xl my-1 font-semibold">価格</label>
+              <label className="text-2xl my-1 font-semibold text-white">価格</label>
               <input
                 type="number"
-                placeholder="100"
+                placeholder="0.01"
                 className="px-5 py-3 rounded-xl
                placeholder:text-slate-400 outline-none border-none  bg-[#272D37]/60 placeholder:font-body font-body"
                 value={nftDetails.price}
