@@ -200,7 +200,7 @@ export default function Home() {
           <div className="grid grid-cols-4 gap-3 sm:gap-y-8 md:grid-cols-2 sm:grid-cols-1 sm:p-12 md:mx-10">
             {mockartist.map((data) => (
               <Link href={`/${data.name}`} key={data.id}>
-                <a className="w-full bg-[#52565e] flex flex-col justify-center items-center p-3 rounded-xl">
+                <a className="w-full bg-[#272D3799] flex flex-col justify-center items-center p-3 rounded-xl">
                   <div className="w-full relative" style={{ paddingBottom: '100%' }}>
                     <img
                       src={data.bgImage}
@@ -221,7 +221,7 @@ export default function Home() {
 
 
         {/* Community */}
-        <section className="max-w-[1240px] bg- my-20 mx-auto bg-[#52565e] gap-2 font-body top-7 text-center rounded-xl sm:mx-10 md:m-10 border border-solid border-sky-600">
+        <section className="max-w-[1240px] bg- my-20 mx-auto bg-[#272D3799] gap-2 font-body top-7 text-center rounded-xl sm:mx-10 md:m-10 border border-solid border-sky-600">
           <div>
             <h1 className="text-4xl sm:text-2xl">Create Your Own NFT!</h1>
             {/* <p className="text-[#ADB9C7] px-[120px] sm:p-2 ms:p-1">
