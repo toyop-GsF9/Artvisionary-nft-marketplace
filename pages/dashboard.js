@@ -32,6 +32,23 @@ const Dashboard = () => {
     );
     return contract;
   };
+  // const getContract = async () => {
+  //   try {
+  //     const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+  //     let contract = new ethers.Contract(
+  //       process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
+  //       ContractABI.abi,
+  //       provider
+  //     );
+  //     return contract;
+  //   } catch (error) {
+  //     console.error("Failed to create contract instance:", error);
+  //     toast.error("Something went wrong with the contract");
+  //     setShowModal(true);
+  //   }
+  // };
+
 
   const maxRetryCount = 3;
   const retryInterval = 2000; // 2 seconds
