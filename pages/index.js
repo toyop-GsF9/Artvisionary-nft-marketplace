@@ -174,7 +174,7 @@ export default function Home() {
             {data.map((item) => (
               <div
                 key={item.id}
-                className="w-full bg-[#52565e] flex flex-col justify-center items-center p-3 rounded-xl"
+                className="w-full bg-[#272D3799] flex flex-col justify-center items-center p-3 rounded-xl"
               >
                 <div className="w-[80px] h-[80px] flex  justify-center items-center ">
                   <img
