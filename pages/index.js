@@ -122,7 +122,7 @@ export default function Home() {
           </div>
 
           {/* <div className="flex flex-col items-center mt-20 ml-[-14rem] w-[581px] md:w-[80%] lg:w-[60%]"> */}
-          <div className="flex flex-col items-center mt-20 lg:mt-[-190px] md:mt-20  ml-[-14rem] w-[581px] md:w-[581px] lg:w-[581px] sm:w-full z-30 transform transition-transform duration-500 lg:translate-y-[-70%] md:translate-y-[-80%] sm:translate-y-[-70%] lg:ml-0 md:ml-0 sm:ml-0">
+          <div className="flex flex-col items-center mt-20 lg:mt-[-190px] md:mt-20  ml-[-14rem] w-[581px] md:w-[581px] lg:w-[581px] sm:w-full z-30 transform transition-transform duration-500 lg:translate-y-[-68%] md:translate-y-[-80%] sm:translate-y-[-68%] lg:ml-0 md:ml-0 sm:ml-0">
             <img src="/images/Treasure Art_LOGO_L.png" className="w-full h-auto z-10" alt="Foreground Image" />
             <p className="mt-72 text-white text-lg text-center z-10 lg:mt-64 md:mt-64 sm:top-60">
               「育つ財宝」を探し出すアートマーケットプレイス！<br />
@@ -140,7 +140,7 @@ export default function Home() {
             <div className="w-[350px] h-[480px] bg-[#272D37]/60 rounded-2xl flex flex-col p-6 sm:h-max mt-40  sm:mt-[-10rem] sm:mb-4">
               <Slideshow2 playlists={playlists} width="300" height="300" />
               <div className="">
-                <h1>example</h1>
+                <h1 className="text-[#ADB9C7]">example</h1>
                 <div className="h-[56px] flex justify-between">
                   <div className="flex flex-row gap-2">
                     <img
@@ -150,12 +150,12 @@ export default function Home() {
                     />
                     <div>
                       <p className="my-1 text-base text-[#8F9CA9]">Creator </p>
-                      <h4 className="my-0">0x00...</h4>
+                      <h4 className="my-0 text-[#ADB9C7]">0x00...</h4>
                     </div>
                   </div>
                   <div>
                     <p className="my-1 text-[#8F9CA9]">Price</p>
-                    <h4 className="my-0 ">1.0 ETH</h4>
+                    <h4 className="my-0 text-[#ADB9C7]">1.0 ETH</h4>
                   </div>
                 </div>
               </div>
@@ -183,7 +183,7 @@ export default function Home() {
                     className="w-full h-full"
                   />
                 </div>
-                <h4 className="font-bold text-[24px] md:text-[14px]">
+                <h4 className="font-bold text-[24px] text-[#ADB9C7] md:text-[14px]">
                   {item.title}
                 </h4>
                 <p className="text-center text-[#ADB9C7] text-[14px]">
@@ -209,7 +209,7 @@ export default function Home() {
                       className="absolute w-full h-full rounded-2xl object-fit: contain"
                     />
                   </div>
-                  <div className="w-full text-center mt-8 font-bold">
+                  <div className="w-full text-center mt-8 font-bold text-[#ADB9C7]">
                     <h3>{data.name}</h3>
                   </div>
                 </a>
@@ -223,7 +223,7 @@ export default function Home() {
         {/* Community */}
         <section className="max-w-[1240px] bg- my-20 mx-auto bg-[#272D3799] gap-2 font-body top-7 text-center rounded-xl sm:mx-10 md:m-10 border border-solid border-sky-600">
           <div>
-            <h1 className="text-4xl sm:text-2xl">Create Your Own NFT!</h1>
+            <h1 className="text-4xl sm:text-2xl text-[#ADB9C7]">Create Your Own NFT!</h1>
             {/* <p className="text-[#ADB9C7] px-[120px] sm:p-2 ms:p-1">
               We have a large scale group to support each other in this game,
               Join us to get the news as soon as possible and follow our latest

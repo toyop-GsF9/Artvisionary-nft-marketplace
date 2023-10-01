@@ -25,7 +25,7 @@ const Footer = () => {
 
           </div>
           <div>
-            <h3 className="title">Company</h3>
+            <h3 className="title text-[#ADB9C7]">Company</h3>
             <p className="desc">Our Team</p>
             <p className="desc">About Us</p>
             <p className="desc">Partners</p>
@@ -33,7 +33,7 @@ const Footer = () => {
             <p className="desc">Career</p>
           </div>
           <div>
-            <h3 className="title">Contact</h3>
+            <h3 className="title text-[#ADB9C7]">Contact</h3>
 
           </div>
         </div>
