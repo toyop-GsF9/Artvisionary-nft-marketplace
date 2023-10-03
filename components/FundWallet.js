@@ -7,7 +7,7 @@ const FundWallet = () => {
 
   return (
     <div className="font-body">
-      <h2>あなたのNFT作成用トークンは : {balance || 0} $BNDLR（※0.06$BNDLR必要）</h2>
+      <h2>あなたのNFT作成用トークン : {balance || 0} $BNDLR（※0.06$BNDLR必要）</h2>
       <input
         className="bg-transparent font-body mt-3 py-1 px-2 focus:ring-0 outline-0  text-2xl outline-none border-none"
         value={value}
@@ -19,7 +19,7 @@ const FundWallet = () => {
             hover:-translate-y-1 text-1xl flex items-center justify-center gap-4 z-50 hover:shadow-lg hover:shadow-blue-500/80"
         onClick={() => fundWallet(+value)}
       >
-        トークンをもらう 💱
+        トークンをもらう（※1回0.02$BNDLR） 💱
       </button>
     </div>
   );
