@@ -207,7 +207,7 @@ const Create = () => {
               <label className="text-2xl my-1 font-semibold text-white">タイトル</label>
               <input
                 placeholder="title"
-                className="px-5 py-3 rounded-xl
+                className="px-5 py-3 rounded-xl text-white
                placeholder:text-slate-400 outline-none border-none  bg-[#272D37]/60 placeholder:font-body font-body"
                 value={nftDetails.name}
                 onChange={(e) =>
@@ -220,7 +220,7 @@ const Create = () => {
               <label className="text-2xl my-1 font-semibold text-white">説明文</label>
               <textarea
                 placeholder="explanation"
-                className="px-5 py-3 rounded-lg placeholder:text-slate-400 bg-[#272D37]/60 border-none outline-none placeholder:font-body tx font-body"
+                className="px-5 py-3 rounded-lg text-white placeholder:text-slate-400 bg-[#272D37]/60 border-none outline-none placeholder:font-body tx font-body"
                 value={nftDetails.description}
                 onChange={(e) =>
                   setNftDetails({ ...nftDetails, description: e.target.value })
@@ -234,7 +234,7 @@ const Create = () => {
               <input
                 type="number"
                 placeholder="0.01"
-                className="px-5 py-3 rounded-xl
+                className="px-5 py-3 rounded-xl text-white
                placeholder:text-slate-400 outline-none border-none  bg-[#272D37]/60 placeholder:font-body font-body"
                 value={nftDetails.price}
                 onChange={(e) =>
