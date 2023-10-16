@@ -155,7 +155,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="my-1 text-[#8F9CA9]">Price</p>
-                    <h4 className="my-0 text-[#ADB9C7]">1.0 ETH</h4>
+                    <h4 className="my-0 text-[#ADB9C7]">1.0 MATIC</h4>
                   </div>
                 </div>
               </div>
