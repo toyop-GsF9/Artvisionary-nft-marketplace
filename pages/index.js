@@ -223,7 +223,7 @@ export default function Home() {
         {/* Community */}
         <section className="max-w-[1240px] bg- my-20 mx-auto bg-[#272D3799] gap-2 font-body top-7 text-center rounded-xl sm:mx-10 md:m-10 border border-solid border-sky-600">
           <div>
-            <h1 className="text-4xl sm:text-2xl text-[#ADB9C7]">Create Your Own NFT!</h1>
+            <h1 className="text-2xl sm:text-2xl text-[#ADB9C7]">Create Your Own NFT!</h1>
             {/* <p className="text-[#ADB9C7] px-[120px] sm:p-2 ms:p-1">
               We have a large scale group to support each other in this game,
               Join us to get the news as soon as possible and follow our latest
