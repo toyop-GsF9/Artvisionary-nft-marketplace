@@ -140,7 +140,7 @@ export default function Square() {
         <link rel="shortcut icon" href="logo.png" />
       </Head>
       <div className="flex items-center justify-center bg-black relative h-screen w-screen">
-        <div className="flex items-center justify-center relative bg-[#1a1a1a] h-full w-full">
+        <div className="flex items-center justify-center relative bg-[#1a1a1a] max-h-[852px] max-w-[852px] h-full w-full">
           <img
             src={mainURL + nfts[currentSlideIndex]?.image}
             alt={nfts[currentSlideIndex]?.name}
