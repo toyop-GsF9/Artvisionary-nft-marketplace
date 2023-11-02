@@ -144,7 +144,7 @@ export default function Square() {
           <img
             src={mainURL + nfts[currentSlideIndex]?.image}
             alt={nfts[currentSlideIndex]?.name}
-            className="object-contain h-full max-h-[90vh] w-full max-w-[90vw] p-4"
+            className="object-contain max-h-[676px] max-w-[676px] h-full  w-full  p-4"
           />
           <div className="flex justify-between absolute bottom-0 left-0 right-0 px-4 py-2 text-[#a3a3a3] w-full">
             <div className="flex items-center">
