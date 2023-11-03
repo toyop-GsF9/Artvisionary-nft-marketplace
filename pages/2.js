@@ -93,7 +93,7 @@ export default function Home() {
               <img src="/images/heroimage3.jpeg" className="absolute top-0 left-0 w-[581px]  object-cover h-[581px] " alt="Background Image" />
             </div>
             {/* <div className="absolute top-[calc(30%+12.5%)] left-[15px] w-full"> */}
-            <div className="absolute  top-[calc(30%+12.5%)] lg:top-[calc(50%+12.5%)] md:top-[calc(80%+12.5%)] sm:top-[calc(140%+12.5%)] left-[15px] w-full">
+            <div className="absolute  top-[calc(30%+12.5%)] lg:top-[calc(50%+12.5%)] md:top-[calc(80%+12.5%)] sm:top-[calc(115%+12.5%)] left-[15px] w-full">
               {addr ? (
                 <button
                   type="button"
@@ -118,8 +118,18 @@ export default function Home() {
             </div>
           </div>
 
-          {/* <div className="flex flex-col items-center mt-20 ml-[-14rem] w-[581px] md:w-[80%] lg:w-[60%]"> */}
-          <div className="flex flex-col items-center mt-20 lg:mt-[-190px] md:mt-36  ml-[-14rem] w-[581px] md:w-[581px] lg:w-[581px] sm:w-full z-30 transform transition-transform duration-500 lg:translate-y-[-68%] md:translate-y-[-80%] sm:translate-y-[-120%] lg:ml-0 md:ml-0 sm:ml-0">
+          <div className="flex flex-col items-center relative  left-1/2 -translate-x-1/2 z-30 transition-transform duration-500">
+            <img src="/images/Treasure Art_LOGO_L.png" className="w-[581px] max-w-full h-auto z-10" alt="Foreground Image" />
+            <p className="text-white text-lg md:text-xs text-center z-10 mt-20 md:mt-36 lg:mt-[-190px]">
+              「育つ財宝」を探し出すアートマーケットプレイス！<br />
+              あなたの目が選んだアートピースがショーケースに並びます。<br />
+              ディスプレイして鑑賞するだけでなく、売ることもできる。<br />
+              自分だけのコレクションにもできる。<br />
+              アートを楽しめば楽しむほど、アーチストの応援になります。<br />
+            </p>
+          </div>
+
+          {/* <div className="flex flex-col items-center mt-20 lg:mt-[-190px] md:mt-36  ml-[-14rem] w-[581px] md:w-[581px] lg:w-[581px] sm:w-full z-30 transform transition-transform duration-500 lg:translate-y-[-68%] md:translate-y-[-80%] sm:translate-y-[-120%] lg:ml-0 md:ml-0 sm:ml-0">
             <img src="/images/Treasure Art_LOGO_L.png" className="w-full h-auto z-10" alt="Foreground Image" />
             <p className="mt-72 text-white text-lg md:text-xs  text-center z-10 lg:mt-64 md:mt-64 sm:top-60">
               「育つ財宝」を探し出すアートマーケットプレイス！<br />
@@ -129,12 +139,12 @@ export default function Home() {
               アートを楽しめば楽しむほど、アーチストの応援になります。<br />
             </p>
 
-          </div>
+          </div> */}
 
 
           <div className="flex justify-center">
 
-            <div className="w-[350px] h-[480px] bg-[#272D37]/60 rounded-2xl flex flex-col p-6 sm:h-max mt-40  sm:mt-[-10rem] sm:mb-4">
+            <div className="w-[350px] h-[480px] bg-[#272D37]/60 rounded-2xl flex flex-col p-6 sm:h-max mt-16  sm:mt-[-10rem] sm:mb-4">
               <Slideshow2 playlists={playlists} width="300" height="300" />
               <div className="">
                 <h1 className="text-[#ADB9C7]">example</h1>
@@ -218,20 +228,20 @@ export default function Home() {
 
 
         {/* Community */}
-        <section className="max-w-[1240px] bg- my-20 mx-auto bg-[#272D3799] gap-2 font-body top-7 text-center rounded-xl sm:mx-10 md:m-10 border border-solid border-sky-600">
+        {/* <section className="max-w-[1240px] bg- my-20 mx-auto bg-[#272D3799] gap-2 font-body top-7 text-center rounded-xl sm:mx-10 md:m-10 border border-solid border-sky-600">
           <div>
             <h1 className="text-2xl sm:text-2xl text-[#ADB9C7]">Create Your Own NFT!</h1>
-            {/* <p className="text-[#ADB9C7] px-[120px] sm:p-2 ms:p-1">
+            <p className="text-[#ADB9C7] px-[120px] sm:p-2 ms:p-1">
               We have a large scale group to support each other in this game,
               Join us to get the news as soon as possible and follow our latest
               announcements!
-            </p> */}
+            </p> }
 
-          </div>
-        </section>
-
-        <Footer />
       </div>
-    </div>
+    </section> */}
+
+        < Footer />
+      </div >
+    </div >
   );
 }

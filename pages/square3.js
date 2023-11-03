@@ -75,7 +75,7 @@ export default function Square() {
         return;
       }
 
-      toast.error("Something went wrong、更新ボタンを押してください。");
+      toast.error("ウォレット接続エラー（polygon Mumbaiで接続）");
     }
 
   };
