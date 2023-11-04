@@ -22,9 +22,22 @@ export default function Square() {
   };
 
 
-  const getContract = async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+  // const getContract = async () => {
+  //   const provider = new ethers.providers.Web3Provider(window.ethereum);
 
+  //   let contract = new ethers.Contract(
+  //     process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
+  //     ContractABI.abi,
+  //     provider
+  //   );
+  //   return contract;
+  // };
+
+  const getContract = () => {
+    // RPC URLを使用してプロバイダを初期化
+    const provider = new ethers.providers.JsonRpcProvider(process.env.NEXT_PUBLIC_RPC_URL);
+
+    // コントラクトを初期化
     let contract = new ethers.Contract(
       process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
       ContractABI.abi,
