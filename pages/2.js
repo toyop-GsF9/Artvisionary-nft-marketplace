@@ -119,8 +119,8 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col items-center relative  left-1/2 -translate-x-1/2 z-30 transition-transform duration-500">
-            <img src="/images/Treasure Art_LOGO_L.png" className="w-[581px] max-w-full h-auto z-10" alt="Foreground Image" />
-            <p className="text-white text-lg md:text-xs text-center z-10 mt-20 md:mt-36 lg:mt-[-190px]">
+            <img src="/images/Treasure Art_LOGO_L.png" className="w-[581px] max-w-full h-auto z-10 md:-mt-80 sm:-mt-80" alt="Foreground Image" />
+            <p className="text-white text-lg md:text-xs text-center z-10 mt-20   md:mb-96">
               「育つ財宝」を探し出すアートマーケットプレイス！<br />
               あなたの目が選んだアートピースがショーケースに並びます。<br />
               ディスプレイして鑑賞するだけでなく、売ることもできる。<br />
@@ -144,7 +144,7 @@ export default function Home() {
 
           <div className="flex justify-center">
 
-            <div className="w-[350px] h-[480px] bg-[#272D37]/60 rounded-2xl flex flex-col p-6 sm:h-max mt-16  sm:mt-[-10rem] sm:mb-4">
+            <div className="w-[350px] h-[480px] bg-[#272D37]/60 rounded-2xl flex flex-col p-6 sm:h-max mt-16  sm:mt-[-10rem] sm:mb-4 sm:p-3 md:mx-10">
               <Slideshow2 playlists={playlists} width="300" height="300" />
               <div className="">
                 <h1 className="text-[#ADB9C7]">example</h1>
