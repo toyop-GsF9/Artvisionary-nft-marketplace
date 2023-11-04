@@ -4,7 +4,7 @@ import ContractABI from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplac
 import { toast } from "react-toastify";
 import axios from "axios";
 import { ethers } from "ethers";
-// import { truncateEthAddress } from "../utils/truncAddress";
+import Link from 'next/link';
 import { useRouter } from "next/router";
 import { QRCodeComponent } from "../components";
 
@@ -129,8 +129,8 @@ export default function Square() {
   };
 
   // NFTの詳細ページへのURLを取得
-  const nftDetailURL = `https://artvisionary02.vercel.app/nft-details?price=${nfts[currentSlideIndex]?.price}&tokenId=${nfts[currentSlideIndex]?.tokenId}&seller=${nfts[currentSlideIndex]?.seller}&owner=${nfts[currentSlideIndex]?.owner}&image=${encodeURIComponent(nfts[currentSlideIndex]?.image)}&name=${encodeURIComponent(nfts[currentSlideIndex]?.name)}&description=${encodeURIComponent(nfts[currentSlideIndex]?.description)}&tokenURI=${encodeURIComponent(nfts[currentSlideIndex]?.tokenURI)}`;
-  const nftDetailURL2 = `https://artvisionary02.vercel.app/dashboard`;
+  const nftDetailURL = `https://artvisionary-nft-marketplace-pi.vercel.app/nft-details?price=${nfts[currentSlideIndex]?.price}&tokenId=${nfts[currentSlideIndex]?.tokenId}&seller=${nfts[currentSlideIndex]?.seller}&owner=${nfts[currentSlideIndex]?.owner}&image=${encodeURIComponent(nfts[currentSlideIndex]?.image)}&name=${encodeURIComponent(nfts[currentSlideIndex]?.name)}&description=${encodeURIComponent(nfts[currentSlideIndex]?.description)}&tokenURI=${encodeURIComponent(nfts[currentSlideIndex]?.tokenURI)}`;
+  const nftDetailURL2 = `https://artvisionary-nft-marketplace-pi.vercel.app/dashboard`;
 
   const truncateSeller = (seller) => seller.slice(-4);
   return (
@@ -167,11 +167,21 @@ export default function Square() {
               </span>
             </div>
           </div>
-          <div className="absolute bottom-0 -mb-28 left-1/2 transform -translate-x-1/2">
+          {/* <div className="absolute bottom-0 -mb-28 left-1/2 transform -translate-x-1/2">
             <QRCodeComponent
               value={nftDetailURL}
               className="w-[81px] h-[81px]"
             />
+          </div> */}
+          <div className="absolute bottom-0 -mb-28 left-1/2 transform -translate-x-1/2">
+            <Link href={nftDetailURL} passHref>
+              <a target="_blank" rel="noopener noreferrer">
+                <QRCodeComponent
+                  value={nftDetailURL}
+                  className="w-[81px] h-[81px]"
+                />
+              </a>
+            </Link>
           </div>
         </div>
       </div>
