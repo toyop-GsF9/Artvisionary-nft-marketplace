@@ -159,7 +159,8 @@ export default function Square() {
             alt={nfts[currentSlideIndex]?.name}
             className="object-contain max-h-[676px] max-w-[676px] h-full  w-full  p-4"
           />
-          <div className="flex justify-between absolute bottom-0 left-0 right-0 px-4 py-2 text-[#a3a3a3] w-full">
+
+          {/* <div className="flex justify-between absolute bottom-0 left-0 right-0 px-4 py-2 text-[#a3a3a3] w-full">
             <div className="flex items-center">
               <img
                 className="w-9 h-9 object-cover mr-1"
@@ -179,7 +180,32 @@ export default function Square() {
                 {nfts[currentSlideIndex]?.price} MATIC
               </span>
             </div>
+          </div> */}
+          <div className="flex justify-between absolute bottom-0 left-0 right-0 px-4 py-2 text-[#a3a3a3] w-full">
+            <div className="flex items-center w-1/2"> {/* w-1/2を追加して幅を親要素に合わせます */}
+              <img
+                className="w-9 h-9 object-cover mr-1"
+                alt="icon"
+                src="/images/mask-group@2x.png"
+              />
+              <span className="underline truncate">{truncateSeller(nfts[currentSlideIndex]?.seller)}</span>
+            </div>
+            <div className="flex items-center w-1/2"> {/* w-1/2を追加して幅を親要素に合わせます */}
+              <span className="truncate">{nfts[currentSlideIndex]?.name}</span>
+            </div>
+            <div className="flex items-center">
+              <img
+                className="w-8 h-6 rounded-[9px]"
+                alt="MATIC"
+                src="/images/polygonlogo-mono.png"
+              />
+              <span className="ml-2 font-semibold leading-[32px]">
+                {nfts[currentSlideIndex]?.price} MATIC
+              </span>
+            </div>
           </div>
+
+
           {/* <div className="absolute bottom-0 -mb-28 left-1/2 transform -translate-x-1/2">
             <QRCodeComponent
               value={nftDetailURL}
