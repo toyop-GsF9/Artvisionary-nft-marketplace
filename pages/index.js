@@ -69,7 +69,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-black top-0">
+    <div className="bg-black top-0 relative z-10">
       <Head>
         <title>Treasure Art</title>
         <link rel="shortcut icon" href="logo.png" />
@@ -83,17 +83,17 @@ export default function Home() {
 
       <div className="relative overflow-hidden bg-black">
 
-        <section className="max-w-[1240px]  mb-10 mx-auto grid grid-cols-3 gap-2 font-body h-[930px] overflow-hidden top-7 md:gap-12 medium md:px-1 lg:grid-cols-1 sm:h-full relative">
+        <section className="max-w-[1240px]  mb-10 mx-auto grid grid-cols-3 gap-2 font-body h-[930px] overflow-hidden top-7 md:gap-12 medium md:px-1 lg:grid-cols-1 sm:h-full ">
 
 
 
-          <div className="relative flex flex-col items-center justify-center h-full min-h-[56vh] sm:items-center z-10">
+          <div className="relative flex flex-col items-center justify-center h-full min-h-[56vh] sm:items-center z-50">
 
             <div className="absolute top-0 left-0 w-full h-[0px] pb-full">
               <img src="/images/heroimage3.jpeg" className="absolute top-0 left-0 w-[581px]  object-cover h-[581px] " alt="Background Image" />
             </div>
             {/* <div className="absolute top-[calc(30%+12.5%)] left-[15px] w-full"> */}
-            <div className="absolute  top-[calc(30%+12.5%)] lg:top-[calc(50%+12.5%)] md:top-[calc(80%+12.5%)] sm:top-[calc(115%+12.5%)] left-[15px] w-full">
+            <div className="absolute  top-[calc(30%+12.5%)] lg:top-[calc(50%+12.5%)] md:top-[calc(80%+12.5%)] sm:top-[calc(115%+12.5%)] left-[15px] w-full z-50">
               {addr ? (
                 <button
                   type="button"
@@ -109,7 +109,7 @@ export default function Home() {
               ) : (
                 <button
                   type="button"
-                  className="bg-[#1E50FF] text-white  outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer duration-250 ease-in-out hover:transform-x-1 hover:drop-shadow-xl hover:shadow-sky-600 w-auto transition transform hover:-translate-y-3 motion-reduce:transition-none motion-reduce:hover:transform-none z-100"
+                  className="bg-[#1E50FF] text-white  outline-none border-none py-3 px-5 rounded-xl font-body cursor-pointer duration-250 ease-in-out hover:transform-x-1 hover:drop-shadow-xl hover:shadow-sky-600 w-auto transition transform hover:-translate-y-3 motion-reduce:transition-none motion-reduce:hover:transform-none "
                   onClick={connectWallet}
                 >
                   Wallet接続
@@ -118,7 +118,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center relative  left-1/2 -translate-x-1/2 z-30 transition-transform duration-500">
+          {/* <div className="flex flex-col items-center relative  left-1/2 -translate-x-1/2 z-30 transition-transform duration-500">
             <img src="/images/Treasure Art_LOGO_L.png" className="w-[581px] max-w-full h-auto z-10 md:-mt-80 sm:-mt-80" alt="Foreground Image" />
             <p className="text-white text-lg md:text-xs text-center z-10 mt-20   md:mb-96">
               「育つ財宝」を探し出すアートマーケットプレイス！<br />
@@ -127,24 +127,25 @@ export default function Home() {
               自分だけのコレクションにもできる。<br />
               アートを楽しめば楽しむほど、アーチストの応援になります。<br />
             </p>
-          </div>
-
-          {/* <div className="flex flex-col items-center mt-20 lg:mt-[-190px] md:mt-36  ml-[-14rem] w-[581px] md:w-[581px] lg:w-[581px] sm:w-full z-30 transform transition-transform duration-500 lg:translate-y-[-68%] md:translate-y-[-80%] sm:translate-y-[-120%] lg:ml-0 md:ml-0 sm:ml-0">
-            <img src="/images/Treasure Art_LOGO_L.png" className="w-full h-auto z-10" alt="Foreground Image" />
-            <p className="mt-72 text-white text-lg md:text-xs  text-center z-10 lg:mt-64 md:mt-64 sm:top-60">
+          </div> */}
+          <div className="flex flex-col items-center relative  left-1/2 -translate-x-1/2 z-50 transition-transform duration-500">
+            <img src="/images/Treasure Art_LOGO_L.png" className="w-[581px] max-w-full h-auto z-50 md:-mt-80 sm:-mt-80" alt="Foreground Image" />
+            <p className="text-white text-lg md:text-xs text-center z-50 mt-20 md:mb-5">
               「育つ財宝」を探し出すアートマーケットプレイス！<br />
               あなたの目が選んだアートピースがショーケースに並びます。<br />
               ディスプレイして鑑賞するだけでなく、売ることもできる。<br />
               自分だけのコレクションにもできる。<br />
               アートを楽しめば楽しむほど、アーチストの応援になります。<br />
             </p>
+          </div>
 
-          </div> */}
+
+
 
 
           <div className="flex justify-center">
 
-            <div className="w-[350px] h-[480px] bg-[#272D37]/60 rounded-2xl flex flex-col p-6 sm:h-max mt-16  sm:mt-[-10rem] sm:mb-4 sm:p-3 md:mx-10">
+            <div className="w-[350px] h-[480px] bg-[#272D37]/60 rounded-2xl flex flex-col p-6 sm:h-max mt-16  sm:mt-40 sm:mb-4 sm:p-3 md:mx-10">
               <Slideshow2 playlists={playlists} width="300" height="300" />
               <div className="">
                 <h1 className="text-[#ADB9C7]">example</h1>
