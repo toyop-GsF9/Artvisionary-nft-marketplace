@@ -212,7 +212,7 @@ export default function Square() {
               className="w-[81px] h-[81px]"
             />
           </div> */}
-          <div className="absolute bottom-0 -mb-28 left-1/2 transform -translate-x-1/2">
+          <div className="absolute bottom-0 -mb-32 left-1/2 transform -translate-x-1/2">
             <Link href={nftDetailURL} passHref>
               <a target="_blank" rel="noopener noreferrer">
                 <QRCodeComponent
