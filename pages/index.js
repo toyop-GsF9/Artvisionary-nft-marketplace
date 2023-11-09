@@ -87,13 +87,13 @@ export default function Home() {
 
 
 
-          <div className="relative flex flex-col items-center justify-center h-full min-h-[56vh] sm:items-center z-50">
+          <div className="relative flex flex-col items-center justify-center h-full min-h-[56vh]  sm:items-center z-50">
 
-            <div className="absolute top-0 left-0 w-full h-[0px] pb-full">
+            <div className="absolute top-0 left-0  h-[0px] pb-full">
               <img src="/images/heroimage3.jpeg" className="absolute top-0 left-0 w-[581px]  object-cover h-[581px] " alt="Background Image" />
             </div>
             {/* <div className="absolute top-[calc(30%+12.5%)] left-[15px] w-full"> */}
-            <div className="absolute  top-[calc(30%+12.5%)] lg:top-[calc(50%+12.5%)] md:top-[calc(80%+12.5%)] sm:top-[calc(115%+12.5%)] left-[15px] w-full z-50">
+            <div className="absolute  top-[calc(30%+12.5%)] lg:top-[calc(50%+12.5%)] md:top-[calc(80%+12.5%)] sm:top-[calc(115%+12.5%)] left-[15px]  z-50">
               {addr ? (
                 <button
                   type="button"
@@ -128,7 +128,7 @@ export default function Home() {
               アートを楽しめば楽しむほど、アーチストの応援になります。<br />
             </p>
           </div> */}
-          <div className="flex flex-col items-center relative  left-1/2 -translate-x-1/2 z-50 transition-transform duration-500">
+          <div className="flex flex-col items-center relative w-[125%] lg:w-full left-1/2 -translate-x-1/2 z-50 transition-transform duration-500">
             <img src="/images/Treasure Art_LOGO_L.png" className="w-[581px] max-w-full h-auto z-50 md:-mt-80 sm:-mt-80" alt="Foreground Image" />
             <p className="text-white text-lg md:text-xs text-center z-50 mt-20 md:mb-5">
               「育つ財宝」を探し出すアートマーケットプレイス！<br />
