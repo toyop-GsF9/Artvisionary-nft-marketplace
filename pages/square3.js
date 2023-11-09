@@ -15,11 +15,14 @@ export default function Square() {
   const [nfts, setNfts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [opacity, setOpacity] = useState(1);
   const router = useRouter();
 
   const handleGoBack = () => {
     router.push('/playlist');
   };
+
+
 
 
   // const getContract = async () => {
@@ -98,6 +101,10 @@ export default function Square() {
   useEffect(() => {
     getNfts();
   }, []);
+  useEffect(() => {
+    // コンポーネントがマウントされた後に透明度を更新
+    setOpacity(1);
+  }, []);
 
 
 
@@ -134,7 +141,14 @@ export default function Square() {
 
 
   const nextSlide = () => {
-    setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % nfts.length);
+    // 透明度を0に設定してフェードアウト
+    setOpacity(0);
+    // 次のスライドに切り替える前にアニメーションを待機
+    setTimeout(() => {
+      setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % nfts.length);
+      // 透明度を1に設定してフェードイン
+      setOpacity(1);
+    }, 500);
   };
 
   const prevSlide = () => {
@@ -157,30 +171,12 @@ export default function Square() {
           <img
             src={mainURL + nfts[currentSlideIndex]?.image}
             alt={nfts[currentSlideIndex]?.name}
-            className="object-contain max-h-[676px] max-w-[676px] h-full  w-full  p-4"
+            className={`object-contain max-h-[676px] max-w-[676px] h-full w-full p-4 transition-opacity duration-500 ${opacity ? 'opacity-100' : 'opacity-0'}`}
+            // スライドが変わる度にアニメーションを実行
+            style={{ opacity: opacity }}
           />
 
-          {/* <div className="flex justify-between absolute bottom-0 left-0 right-0 px-4 py-2 text-[#a3a3a3] w-full">
-            <div className="flex items-center">
-              <img
-                className="w-9 h-9 object-cover mr-1"
-                alt="icon"
-                src="/images/mask-group@2x.png"
-              />
-              <span className="underline truncate ml-2">{truncateSeller(nfts[currentSlideIndex]?.seller)}</span>
-              <span className="truncate ml-6">{nfts[currentSlideIndex]?.name}</span>
-            </div>
-            <div className="flex items-center">
-              <img
-                className="w-8 h-6 rounded-[9px]"
-                alt="MATIC"
-                src="/images/polygonlogo-mono.png"
-              />
-              <span className="ml-2 font-semibold leading-[32px]">
-                {nfts[currentSlideIndex]?.price} MATIC
-              </span>
-            </div>
-          </div> */}
+
           <div className="flex justify-between absolute bottom-0 left-0 right-0 px-4 py-2 text-[#a3a3a3] w-full">
             <div className="flex items-center w-1/2"> {/* w-1/2を追加して幅を親要素に合わせます */}
               <img
