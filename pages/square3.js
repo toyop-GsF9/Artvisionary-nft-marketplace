@@ -137,15 +137,42 @@ export default function Square() {
     )
 
 
+  // 画像のプリロード機能
+  const preloadImage = (src) => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = resolve;
+      img.onerror = reject;
+    });
+  };
 
 
+  // const nextSlide = () => {
+  //   // 透明度を0に設定してフェードアウト
+  //   setOpacity(0);
+  //   // 次のスライドに切り替える前にアニメーションを待機
+  //   setTimeout(() => {
+  //     setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % nfts.length);
+  //     // 透明度を1に設定してフェードイン
+  //     setOpacity(1);
+  //   }, 1000); // アニメーションの持続時間に合わせて調整
+  // };
 
-  const nextSlide = () => {
+  const nextSlide = async () => {
+    // 次のスライドの画像URLを取得
+    const nextIndex = (currentSlideIndex + 1) % nfts.length;
+    const nextImageUrl = mainURL + nfts[nextIndex].image;
+
+    // 次の画像をプリロード
+    await preloadImage(nextImageUrl);
+
     // 透明度を0に設定してフェードアウト
     setOpacity(0);
-    // 次のスライドに切り替える前にアニメーションを待機
+
+    // 画像の読み込みが完了したらスライドインデックスを更新
     setTimeout(() => {
-      setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % nfts.length);
+      setCurrentSlideIndex(nextIndex);
       // 透明度を1に設定してフェードイン
       setOpacity(1);
     }, 1000); // アニメーションの持続時間に合わせて調整
@@ -168,6 +195,14 @@ export default function Square() {
       </Head>
       <div className="flex items-center justify-center bg-black relative h-screen w-screen">
         <div className="flex items-center justify-center relative bg-[#1a1a1a] max-h-[852px] max-w-[852px] h-full w-full">
+          {/* <img
+            src={mainURL + nfts[currentSlideIndex]?.image}
+            alt={nfts[currentSlideIndex]?.name}
+            className={`object-contain max-h-[676px] max-w-[676px] h-full w-full p-4 transition-opacity duration-1000 ${opacity ? 'opacity-100' : 'opacity-0'}`}
+            style={{ opacity: opacity }}
+            onLoad={() => setOpacity(1)} // 画像が読み込まれたらフェードインを開始
+          /> */}
+
           <img
             src={mainURL + nfts[currentSlideIndex]?.image}
             alt={nfts[currentSlideIndex]?.name}
