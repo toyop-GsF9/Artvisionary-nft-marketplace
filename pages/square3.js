@@ -148,7 +148,7 @@ export default function Square() {
       setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % nfts.length);
       // 透明度を1に設定してフェードイン
       setOpacity(1);
-    }, 500);
+    }, 1000); // アニメーションの持続時間に合わせて調整
   };
 
   const prevSlide = () => {
@@ -171,9 +171,9 @@ export default function Square() {
           <img
             src={mainURL + nfts[currentSlideIndex]?.image}
             alt={nfts[currentSlideIndex]?.name}
-            className={`object-contain max-h-[676px] max-w-[676px] h-full w-full p-4 transition-opacity duration-500 ${opacity ? 'opacity-100' : 'opacity-0'}`}
-            // スライドが変わる度にアニメーションを実行
+            className={`object-contain max-h-[676px] max-w-[676px] h-full w-full p-4 transition-opacity duration-1000 ${opacity ? 'opacity-100' : 'opacity-0'}`}
             style={{ opacity: opacity }}
+            onLoad={() => setOpacity(1)} // 画像が読み込まれたらフェードインを開始
           />
 
 
