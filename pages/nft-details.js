@@ -128,33 +128,33 @@ const NFTDetails = () => {
             </div>
           </div>
           <div className="">
-            <h1>
+            <h1 className="text-white">
               #{nft.tokenId} {nft.name}
             </h1>
-            <p className="text-[#ADB9C7]"> description: {nft.description}</p>
+            <p className="text-white">  {nft.description}</p>
             <div>
-              <p>Price</p>
-              <h2>{nft.price} MATIC</h2>
+              <p className="text-slate-400">Price</p>
+              <h2 className="text-white">{nft.price} MATIC</h2>
             </div>
             <div>
-              <p>Owner </p>
-              <h2 className="my-0 ssm:text-sm text-transparent font-bold bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+              <p className="text-slate-400">Owner </p>
+              <h2 className="text-white my-0 ssm:text-sm text-transparent font-bold bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
                 {truncateEthAddress(nft.owner)}
               </h2>
             </div>
 
             {nft.seller.startsWith("0x0") ? null : (
               <div>
-                <p>Seller </p>
-                <h2 className="my-0 ssm:text-sm text-transparent font-bold bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+                <p className="text-slate-400">Seller </p>
+                <h2 className="text-white my-0 ssm:text-sm text-transparent font-bold bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
                   {truncateEthAddress(nft.seller)}
                 </h2>
               </div>
             )}
 
             <div>
-              <p>Blockchain</p>
-              <h2>Polygon(Mumbai)</h2>
+              <p className="text-slate-400">Blockchain</p>
+              <h2 className="text-white">Polygon(Mumbai)</h2>
             </div>
 
             <button
