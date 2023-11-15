@@ -16,6 +16,7 @@ export default function Square() {
   const [loading, setLoading] = useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [opacity, setOpacity] = useState(1);
+  const [detailsVisible, setDetailsVisible] = useState(true);
   const router = useRouter();
 
   const handleGoBack = () => {
@@ -116,7 +117,7 @@ export default function Square() {
     // 3秒ごとにnextSlide関数を呼び出すタイマーを設定
     const timerId = setInterval(() => {
       nextSlide();
-    }, 10000); // 3000ミリ秒 = 3秒
+    }, 10000);
 
     // useEffectのクリーンアップ関数でタイマーをクリア
     return () => {
@@ -125,6 +126,29 @@ export default function Square() {
   }, [loading, nfts, currentSlideIndex]); // loading, nfts, currentSlideIndex のいずれかが変更されたときに再度設定
 
 
+  useEffect(() => {
+    // スライドが切り替わるたびに実行される
+    setDetailsVisible(true); // 詳細情報を表示
+
+    const timer = setTimeout(() => {
+      setDetailsVisible(false); // 1秒後に非表示
+    }, 3500);
+
+    return () => clearTimeout(timer); // クリーンアップ関数
+  }, [currentSlideIndex]); // currentSlideIndexが変更されるたびに実行
+
+  // 画像が最初に読み込まれたときにも詳細情報を表示するためのロジック
+  useEffect(() => {
+    if (nfts.length > 0) {
+      setDetailsVisible(true);
+
+      const timer = setTimeout(() => {
+        setDetailsVisible(false);
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [nfts]); // nftsが変更されたときに実行
 
   if (!loading)
     return (
@@ -165,6 +189,7 @@ export default function Square() {
       // 透明度を1に設定してフェードイン
       setOpacity(1);
     }, 1000); // アニメーションの持続時間に合わせて調整
+
   };
 
   const prevSlide = () => {
@@ -183,58 +208,58 @@ export default function Square() {
         <link rel="shortcut icon" href="logo.png" />
       </Head>
       <div className="flex items-center justify-center bg-black relative h-screen w-screen">
-        <div className="flex items-center justify-center relative bg-[#1a1a1a] max-h-[852px] max-w-[852px] h-full w-full">
+        {/* 正方形を保持するためにコンテナのサイズを調整 */}
+        <div className="flex items-center justify-center relative bg-black h-[min(100vh,100vw)] w-[min(100vh,100vw)]">
 
           <img
             src={mainURL + nfts[currentSlideIndex]?.image}
             alt={nfts[currentSlideIndex]?.name}
             className={`object-contain max-h-[676px] max-w-[676px] h-full w-full p-4 transition-opacity duration-1000 ${opacity ? 'opacity-100' : 'opacity-0'}`}
             style={{ opacity: opacity }}
-            onLoad={() => setOpacity(1)} // 画像が読み込まれたらフェードインを開始
+            onLoad={() => setOpacity(1)}
           />
 
 
-          <div className="flex justify-between absolute bottom-0 left-0 right-0 px-4 py-2 text-[#a3a3a3] w-full">
-            <div className="flex items-center w-1/2"> {/* w-1/2を追加して幅を親要素に合わせます */}
-              <img
-                className="w-9 h-9 object-cover mr-1"
-                alt="icon"
-                src="/images/mask-group@2x.png"
-              />
-              <span className="underline truncate">{truncateSeller(nfts[currentSlideIndex]?.seller)}</span>
-            </div>
-            <div className="flex items-center w-1/2"> {/* w-1/2を追加して幅を親要素に合わせます */}
+          <div className={`absolute bg-black bg-opacity-50 bottom-0 left-0 right-0 px-4 py-2 text-white transition-opacity duration-1000 ${detailsVisible ? 'opacity-100' : 'opacity-0'} w-full`}>
+            {/* 上の行：タイトル */}
+            <div className="flex justify-center mb-2 mt-2 ">
               <span className="truncate">{nfts[currentSlideIndex]?.name}</span>
             </div>
-            <div className="flex items-center">
-              <img
-                className="w-8 h-6 rounded-[9px]"
-                alt="MATIC"
-                src="/images/polygonlogo-mono.png"
-              />
-              <span className="ml-2 font-semibold leading-[32px]">
-                {nfts[currentSlideIndex]?.price} MATIC
-              </span>
+
+            {/* 下の行：ロゴ、作者番号、価格ロゴ、価格 */}
+            <div className="flex justify-between ">
+              <div className="flex items-center">
+                <img
+                  className="w-9 h-9 object-cover mr-1"
+                  alt="icon"
+                  src="/images/mask-group@2x.png"
+                />
+                <span className="underline truncate">{truncateSeller(nfts[currentSlideIndex]?.seller)}</span>
+              </div>
+              <div className="flex items-center">
+                <img
+                  className="w-8 h-6 rounded-[9px]"
+                  alt="MATIC"
+                  src="/images/polygonlogo-mono.png"
+                />
+                <span className="ml-2 font-semibold leading-[32px]">
+                  {nfts[currentSlideIndex]?.price} MATIC
+                </span>
+              </div>
             </div>
           </div>
 
 
-          {/* <div className="absolute bottom-0 -mb-28 left-1/2 transform -translate-x-1/2">
-            <QRCodeComponent
-              value={nftDetailURL}
-              className="w-[81px] h-[81px]"
-            />
-          </div> */}
-          <div className="absolute bottom-0 -mb-32 left-1/2 transform -translate-x-1/2">
-            <Link href={nftDetailURL} passHref>
-              <a target="_blank" rel="noopener noreferrer">
-                <QRCodeComponent
-                  value={nftDetailURL}
-                  className="w-[81px] h-[81px]"
-                />
-              </a>
-            </Link>
-          </div>
+        </div>
+        <div className="absolute bottom-0 mb-8 right-0 transform -translate-x-1/2 md:bottom-4 md:left-auto md:right-4 md:transform-none">
+          <Link href={nftDetailURL} passHref>
+            <a target="_blank" rel="noopener noreferrer">
+              <QRCodeComponent
+                value={nftDetailURL}
+                className="w-[81px] h-[81px]"
+              />
+            </a>
+          </Link>
         </div>
       </div>
     </>
