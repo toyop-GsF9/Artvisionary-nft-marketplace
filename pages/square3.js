@@ -210,7 +210,7 @@ export default function Square() {
       <div className="flex items-center justify-center bg-black relative h-screen w-screen">
         {/* 正方形を保持するためにコンテナのサイズを調整 */}
         {/* <div className="flex items-center justify-center relative bg-black h-[min(100vh,100vw)] w-[min(100vh,100vw)]"> */}
-        <div className="flex items-center justify-center relative bg-[#1a1a1a] h-[min(100vh,100vw)] w-[min(100vh,100vw)] sm:mt-[-50px]">
+        <div className="flex items-center justify-center relative bg-black h-[min(100vh,100vw)] w-[min(100vh,100vw)] sm:mt-[-50px]">
           <img
             src={mainURL + nfts[currentSlideIndex]?.image}
             alt={nfts[currentSlideIndex]?.name}
