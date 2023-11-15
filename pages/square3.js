@@ -144,7 +144,7 @@ export default function Square() {
 
       const timer = setTimeout(() => {
         setDetailsVisible(false);
-      }, 1000);
+      }, 3500);
 
       return () => clearTimeout(timer);
     }
