@@ -251,7 +251,7 @@ export default function Square() {
 
 
         </div>
-        <div className="absolute bottom-0 mb-8 right-0 transform -translate-x-1/2 md:bottom-4 md:left-auto md:right-4 md:transform-none">
+        <div className="absolute bottom-0 mb-10 right-0 transform -translate-x-1/2 md:bottom-4 md:left-auto md:right-4 md:transform-none">
           <Link href={nftDetailURL} passHref>
             <a target="_blank" rel="noopener noreferrer">
               <QRCodeComponent
